@@ -1,0 +1,11 @@
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/ibtool/_BundleResourceWithLogicalName.items
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/actool/_PartialAppManifest.items
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/actool/_BundleResourceWithLogicalName.items
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.iOS.pdb
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.iOS.exe
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/XamarinTestApp.iOS.exe
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/XamarinTestApp.iOS.pdb
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.dll
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.pdb
