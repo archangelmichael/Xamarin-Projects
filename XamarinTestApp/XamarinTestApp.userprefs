@@ -1,8 +1,21 @@
 ﻿<Properties StartupConfiguration="{2482803D-F14B-4321-8F1A-D3DB2FBAB19C}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController.cs">
     <Files>
-      <File FileName="iOS/ViewController.cs" Line="30" Column="37" />
+      <File FileName="iOS/ViewController.cs" Line="18" Column="3" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="XamarinTestApp" expanded="True">
+            <Node name="XamarinTestApp" expanded="True" />
+            <Node name="XamarinTestApp.Droid" expanded="True" />
+            <Node name="XamarinTestApp.iOS" expanded="True">
+              <Node name="ViewController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

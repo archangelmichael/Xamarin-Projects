@@ -15,31 +15,49 @@ namespace XamarinTestApp.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnHello { get; set; }
+        UIKit.UIButton BtnCall { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnHi { get; set; }
+        UIKit.UIButton BtnShowHistory { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField tvNumber { get; set; }
+        UIKit.UIButton BtnTranslate { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LblPhoneNumber { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField TvPhoneNumber { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnHello != null) {
-                btnHello.Dispose ();
-                btnHello = null;
+            if (BtnCall != null) {
+                BtnCall.Dispose ();
+                BtnCall = null;
             }
 
-            if (btnHi != null) {
-                btnHi.Dispose ();
-                btnHi = null;
+            if (BtnShowHistory != null) {
+                BtnShowHistory.Dispose ();
+                BtnShowHistory = null;
             }
 
-            if (tvNumber != null) {
-                tvNumber.Dispose ();
-                tvNumber = null;
+            if (BtnTranslate != null) {
+                BtnTranslate.Dispose ();
+                BtnTranslate = null;
+            }
+
+            if (LblPhoneNumber != null) {
+                LblPhoneNumber.Dispose ();
+                LblPhoneNumber = null;
+            }
+
+            if (TvPhoneNumber != null) {
+                TvPhoneNumber.Dispose ();
+                TvPhoneNumber = null;
             }
         }
     }

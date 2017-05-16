@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using UIKit;
 
@@ -6,29 +7,51 @@ namespace XamarinTestApp.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		int count = 1;
+		private string translatedNumber = "";
+
+		public List<string> PhoneNumbers { get; set; }
 
 		public ViewController(IntPtr handle) : base(handle)
 		{
+			PhoneNumbers = new List<string>();
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 
-			btnHi.TouchUpInside += delegate {
-				var title = string.Format("Hi for {0} time", count++);
-				btnHi.SetTitle(title, UIControlState.Normal);
+			BtnTranslate.TouchUpInside += delegate {
+				translatedNumber = NumberTranslator.ToNumber(TvPhoneNumber.Text);
+				var title = string.Format("Call {0}", translatedNumber);
+				BtnCall.SetTitle(title, UIControlState.Normal);
+				TvPhoneNumber.ResignFirstResponder();
 			};
 
-			string translatedNumber = "";
-			btnHello.TouchUpInside += (object sender, EventArgs e) =>
-			{
-				translatedNumber = NumberTranslator.ToNumber(tvNumber.Text);
-				var title = string.Format("Call {0}", translatedNumber);
-				btnHello.SetTitle(title, UIControlState.Normal);
-				tvNumber.ResignFirstResponder();
+			BtnCall.TouchUpInside += (object sender, EventArgs e) => {
+				if (translatedNumber != null && translatedNumber.Trim() != "")
+				{
+					PhoneNumbers.Add(translatedNumber);
+				}
 			};
+
+			BtnShowHistory.TouchUpInside += (object sender, EventArgs e) =>
+			{
+				PerformSegue("showCallHistory", this);
+			};
+		}
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+		{
+			base.PrepareForSegue(segue, sender);
+
+			if (segue.Identifier == "showCallHistory")
+			{
+				HistoryViewController historyVC = segue.DestinationViewController as HistoryViewController;
+				if (historyVC != null)
+				{
+					historyVC.PhoneNumbers = this.PhoneNumbers;
+				}
+			}
 		}
 
 		public override void DidReceiveMemoryWarning()
