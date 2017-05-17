@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using UIKit;
 
 namespace XamarinTestApp.iOS
@@ -48,6 +47,7 @@ namespace XamarinTestApp.iOS
 				LocationsViewController locationsVC = Storyboard.InstantiateViewController(LOCATIONS_VC_ID) as LocationsViewController;
 				if (locationsVC != null)
 				{
+					locationsVC.phoneCalls = phoneCalls;
 					NavigationController.PushViewController(locationsVC, true);
 				}
 			};

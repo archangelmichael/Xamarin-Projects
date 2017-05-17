@@ -1,37 +1,12 @@
 ﻿<Properties StartupConfiguration="{2482803D-F14B-4321-8F1A-D3DB2FBAB19C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/HistoryViewController.cs">
-    <Files>
-      <File FileName="iOS/ViewController/ViewController.cs" Line="28" Column="44" />
-      <File FileName="iOS/ViewController/HistoryViewController.cs" Line="56" Column="6" />
-      <File FileName="iOS/View/PhoneCallTableViewCell.cs" Line="25" Column="40" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="XamarinTestApp" expanded="True">
-            <Node name="XamarinTestApp" expanded="True">
-              <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="XamarinTestApp.Droid" expanded="True" />
-            <Node name="XamarinTestApp.iOS" expanded="True">
-              <Node name="Storyboard" expanded="True" />
-              <Node name="View" expanded="True">
-                <Node name="PhoneCallTableViewCell.cs" expanded="True" />
-              </Node>
-              <Node name="ViewController" expanded="True">
-                <Node name="HistoryViewController.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="XamarinTestApp/MathUtils.cs" line="15" offsetX="537" offsetY="210" expression="sign" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.ItemProperties.XamarinTestApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FB7CD963-B1DC-459B-BB4D-B929405911D6" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.XamarinTestApp.Droid PreferredExecutionTarget="Android.SelectDevice" />

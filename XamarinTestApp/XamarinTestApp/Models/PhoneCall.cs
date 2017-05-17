@@ -12,8 +12,14 @@ namespace XamarinTestApp
 		{
 			this.title = title;
 			this.date = date;
-			this.latitude = latitude;
-			this.longitude = longitude;
+
+			var latitudeSign = MathUtils.GetRandomSign();
+			double latitudeDisplacement = MathUtils.GetRandomNumber(0, 5);
+			this.latitude = latitude + latitudeSign * latitudeDisplacement;
+
+			var longitudeSign = MathUtils.GetRandomSign();
+			double longitudeDisplacement = MathUtils.GetRandomNumber(0, 5);
+            this.longitude = longitude + longitudeSign * longitudeDisplacement;
 		}
 
 		public string GetTitle()
