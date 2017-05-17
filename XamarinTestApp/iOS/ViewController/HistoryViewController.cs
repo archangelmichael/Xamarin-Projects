@@ -7,15 +7,18 @@ namespace XamarinTestApp.iOS
 {
 	public partial class HistoryViewController : UITableViewController
 	{
-		public List<string> PhoneNumbers { get; set; }
-
-		static NSString callHistoryCellId = new NSString("CallHistoryCell");
+		public List<PhoneCall> phoneCalls { get; set; }
 
 		public HistoryViewController(IntPtr handle) : base(handle)
 		{
-			TableView.RegisterClassForCellReuse(typeof(UITableViewCell), callHistoryCellId);
+			UINib cellNib = UINib.FromName(PhoneCallTableViewCell.Key, NSBundle.MainBundle);
+			TableView.RegisterNibForCellReuse(cellNib, PhoneCallTableViewCell.Key);
 			TableView.Source = new HistoryDataSource(this);
-			PhoneNumbers = new List<string>();
+
+			TableView.RowHeight = UITableView.AutomaticDimension;
+			TableView.EstimatedRowHeight = 60.0f;
+
+			phoneCalls = new List<PhoneCall>();
 		}
 
 		public override void ViewDidLoad()
@@ -41,15 +44,19 @@ namespace XamarinTestApp.iOS
 
 			public override nint RowsInSection(UITableView tableview, nint section)
 			{
-				return controller.PhoneNumbers.Count;
+				return controller.phoneCalls.Count;
 			}
 
 			public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 			{
-				var cell = tableView.DequeueReusableCell(callHistoryCellId);
+				PhoneCallTableViewCell cell = tableView.DequeueReusableCell(PhoneCallTableViewCell.Key, indexPath) as PhoneCallTableViewCell;
+				if (cell != null)
+				{
+					int row = indexPath.Row;
+					PhoneCall rowPhoneCall = controller.phoneCalls[row];
+					cell.SetCall(rowPhoneCall);
+				}
 
-				int row = indexPath.Row;
-				cell.TextLabel.Text = controller.PhoneNumbers[row];
 				return cell;
 			}
 		}

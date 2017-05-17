@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhoneCallTableViewCell" rowHeight="60" id="cxk-wN-pdQ" customClass="PhoneCallTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2">
+                        <rect key="frame" x="8" y="8" width="304" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87U-4L-Lhl">
+                        <rect key="frame" x="8" y="32" width="304" height="19"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="03f-pu-ccR"/>
+                    <constraint firstAttribute="bottom" secondItem="87U-4L-Lhl" secondAttribute="bottom" constant="8" id="Cxr-fI-tVn"/>
+                    <constraint firstItem="2" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="8" id="HJx-Jv-J9R"/>
+                    <constraint firstItem="87U-4L-Lhl" firstAttribute="top" secondItem="2" secondAttribute="bottom" constant="2" id="O1d-Tt-QYH"/>
+                    <constraint firstItem="87U-4L-Lhl" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="acZ-JA-f3E"/>
+                    <constraint firstAttribute="trailing" secondItem="2" secondAttribute="trailing" constant="8" id="qgm-ss-hiY"/>
+                    <constraint firstAttribute="trailing" secondItem="87U-4L-Lhl" secondAttribute="trailing" constant="8" id="xTx-8x-NTk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblNumber" destination="2" id="name-outlet-2"/>
+                <outlet property="lblDate" destination="87U-4L-Lhl" id="name-outlet-87U-4L-Lhl"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="60"/>
+        </tableViewCell>
+    </objects>
+</document>

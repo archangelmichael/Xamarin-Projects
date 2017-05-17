@@ -95,11 +95,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Model\" />
+    <Folder Include="ViewController\" />
+    <Folder Include="Storyboard\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="HistoryViewController.xib" />
+    <InterfaceDefinition Include="Storyboard\LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Storyboard\Main.storyboard" />
+    <InterfaceDefinition Include="View\PhoneCallTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -108,13 +112,21 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
+    <Compile Include="ViewController\LocationsViewController.cs" />
+    <Compile Include="ViewController\LocationsViewController.designer.cs">
+      <DependentUpon>LocationsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\ViewController.cs" />
+    <Compile Include="ViewController\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="HistoryViewController.cs" />
-    <Compile Include="HistoryViewController.designer.cs">
+    <Compile Include="ViewController\HistoryViewController.cs" />
+    <Compile Include="ViewController\HistoryViewController.designer.cs">
       <DependentUpon>HistoryViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhoneCallTableViewCell.cs" />
+    <Compile Include="View\PhoneCallTableViewCell.designer.cs">
+      <DependentUpon>PhoneCallTableViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
