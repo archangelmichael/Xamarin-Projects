@@ -6,6 +6,7 @@
 	<dict>
 		<key>output-files</key>
 		<array>
+			<string>/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/actool/bundle/Assets.car</string>
 			<string>/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/actool/partial-info.plist</string>
 		</array>
 	</dict>

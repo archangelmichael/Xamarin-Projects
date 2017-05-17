@@ -31,6 +31,10 @@ namespace XamarinTestApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView ivAvatar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPhoneNumber { get; set; }
 
         [Outlet]
@@ -57,6 +61,11 @@ namespace XamarinTestApp.iOS
             if (btnTranslate != null) {
                 btnTranslate.Dispose ();
                 btnTranslate = null;
+            }
+
+            if (ivAvatar != null) {
+                ivAvatar.Dispose ();
+                ivAvatar = null;
             }
 
             if (lblPhoneNumber != null) {

@@ -34,59 +34,70 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rf-GA-QPL" misplaced="YES">
-                                                <rect key="frame" x="40" y="60" width="295" height="0.0"/>
+                                                <rect key="frame" x="100" y="106" width="175" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-Ac-vcx" misplaced="YES">
-                                                <rect key="frame" x="40" y="80" width="295" height="30"/>
+                                                <rect key="frame" x="40" y="56" width="295" height="30"/>
                                                 <state key="normal" title="Translate">
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArT-4w-6fY" misplaced="YES">
-                                                <rect key="frame" x="40" y="120" width="295" height="30"/>
-                                                <state key="normal" title="Call"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGe-g6-ifW" misplaced="YES">
-                                                <rect key="frame" x="40" y="160" width="295" height="30"/>
-                                                <state key="normal" title="Show call history"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_full" translatesAutoresizingMaskIntoConstraints="NO" id="1vZ-0O-D2o">
+                                                <rect key="frame" x="40" y="81" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="vPH-iV-5Oh"/>
+                                                    <constraint firstAttribute="width" constant="50" id="vg2-9D-Cay"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArT-4w-6fY" misplaced="YES">
+                                                <rect key="frame" x="295" y="86" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="6sc-Ly-vAR"/>
+                                                    <constraint firstAttribute="width" constant="40" id="NVB-rk-Kcn"/>
+                                                </constraints>
+                                                <state key="normal" image="call_full"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13" misplaced="YES">
-                                                <rect key="frame" x="40" y="200" width="295" height="30"/>
+                                                <rect key="frame" x="40" y="176" width="295" height="30"/>
                                                 <state key="normal" title="Show locations history">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGe-g6-ifW" misplaced="YES">
+                                                <rect key="frame" x="40" y="136" width="295" height="30"/>
+                                                <state key="normal" title="Show call history"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="ArT-4w-6fY" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="4ad-Ba-p2f"/>
+                                            <constraint firstItem="ArT-4w-6fY" firstAttribute="leading" secondItem="5rf-GA-QPL" secondAttribute="trailing" constant="20" id="0en-Xk-M2g"/>
+                                            <constraint firstItem="5rf-GA-QPL" firstAttribute="top" secondItem="oBE-Ac-vcx" secondAttribute="bottom" constant="20" id="27i-l9-ioE"/>
+                                            <constraint firstItem="1vZ-0O-D2o" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="5fl-7b-sCa"/>
                                             <constraint firstItem="5rf-GA-QPL" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="83o-uX-zRy"/>
-                                            <constraint firstItem="5rf-GA-QPL" firstAttribute="top" secondItem="pMe-kk-NIm" secondAttribute="bottom" constant="10" id="83t-UH-3Ob"/>
+                                            <constraint firstItem="ArT-4w-6fY" firstAttribute="centerY" secondItem="5rf-GA-QPL" secondAttribute="centerY" id="AQk-fU-NXr"/>
                                             <constraint firstAttribute="height" constant="500" id="CGx-PY-XrG"/>
                                             <constraint firstItem="xGe-g6-ifW" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="D2N-EN-T1H"/>
+                                            <constraint firstAttribute="trailing" secondItem="ArT-4w-6fY" secondAttribute="trailing" constant="40" id="EFN-6P-eK1"/>
+                                            <constraint firstItem="xGe-g6-ifW" firstAttribute="top" secondItem="5rf-GA-QPL" secondAttribute="bottom" constant="30" id="FOy-EX-DP1"/>
                                             <constraint firstAttribute="trailing" secondItem="pMe-kk-NIm" secondAttribute="trailing" constant="40" id="FiQ-aD-m41"/>
-                                            <constraint firstItem="ArT-4w-6fY" firstAttribute="top" secondItem="oBE-Ac-vcx" secondAttribute="bottom" constant="10" id="IA0-c8-DZ9"/>
                                             <constraint firstItem="13" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="JUZ-uV-Zk0"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="Kn3-fe-VJS"/>
                                             <constraint firstAttribute="trailing" secondItem="13" secondAttribute="trailing" constant="40" id="NjY-BJ-FBV"/>
-                                            <constraint firstItem="xGe-g6-ifW" firstAttribute="top" secondItem="ArT-4w-6fY" secondAttribute="bottom" constant="10" id="OIq-Zb-tXJ"/>
-                                            <constraint firstItem="ArT-4w-6fY" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="Q0F-Hi-1ot"/>
                                             <constraint firstItem="13" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="Wdi-ag-cGs"/>
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="XhS-H1-rLs"/>
                                             <constraint firstAttribute="trailing" secondItem="oBE-Ac-vcx" secondAttribute="trailing" constant="40" id="bcj-sb-Vea"/>
-                                            <constraint firstAttribute="trailing" secondItem="ArT-4w-6fY" secondAttribute="trailing" constant="40" id="c7X-VQ-Joc"/>
-                                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="5rf-GA-QPL" secondAttribute="bottom" constant="20" id="dHo-np-7uY"/>
-                                            <constraint firstAttribute="trailing" secondItem="5rf-GA-QPL" secondAttribute="trailing" constant="40" id="deG-WU-QcV"/>
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="ede-Ui-eBo"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="fN0-QO-VoV"/>
+                                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="pMe-kk-NIm" secondAttribute="bottom" constant="6" id="i00-3l-crI"/>
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="top" secondItem="j3I-nb-clF" secondAttribute="top" constant="20" id="kzz-uH-7Qd"/>
                                             <constraint firstItem="13" firstAttribute="top" secondItem="xGe-g6-ifW" secondAttribute="bottom" constant="10" id="nTT-t6-r8e"/>
+                                            <constraint firstItem="5rf-GA-QPL" firstAttribute="leading" secondItem="1vZ-0O-D2o" secondAttribute="trailing" constant="10" id="pFV-UX-guR"/>
                                             <constraint firstAttribute="trailing" secondItem="xGe-g6-ifW" secondAttribute="trailing" constant="40" id="ti5-mN-0eo"/>
+                                            <constraint firstItem="1vZ-0O-D2o" firstAttribute="centerY" secondItem="5rf-GA-QPL" secondAttribute="centerY" id="vfV-kt-VvL"/>
                                             <constraint firstItem="xGe-g6-ifW" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="wCb-TX-1K2"/>
-                                            <constraint firstItem="5rf-GA-QPL" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="yeW-St-Fw7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -116,11 +127,12 @@
                         <outlet property="lblPhoneNumber" destination="5rf-GA-QPL" id="name-outlet-5rf-GA-QPL"/>
                         <outlet property="tvPhoneNumber" destination="pMe-kk-NIm" id="name-outlet-pMe-kk-NIm"/>
                         <segue destination="dU1-tb-zdp" kind="show" identifier="showCallHistory" id="Rjj-Mc-TdX"/>
+                        <outlet property="ivAvatar" destination="1vZ-0O-D2o" id="name-outlet-1vZ-0O-D2o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="557.6" y="27.43628"/>
+            <point key="canvasLocation" x="557.6" y="26.53673"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="hf0-yG-KCU">
@@ -201,7 +213,8 @@
             <point key="canvasLocation" x="1010.4" y="767.7661"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedScreenMetrics key="destination" type="retina47"/>
-    </simulatedMetricsContainer>
+    <resources>
+        <image name="avatar_full" width="100" height="100"/>
+        <image name="call_full" width="100" height="100"/>
+    </resources>
 </document>

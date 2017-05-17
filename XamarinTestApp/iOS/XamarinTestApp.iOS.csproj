@@ -92,6 +92,10 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\avatar_full.imageset\avatar_full.png" />
+    <ImageAsset Include="Assets.xcassets\avatar_full.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\call_full.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\call_full.imageset\call_full.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -99,6 +103,8 @@
     <Folder Include="ViewController\" />
     <Folder Include="Storyboard\" />
     <Folder Include="View\" />
+    <Folder Include="Assets.xcassets\avatar_full.imageset\" />
+    <Folder Include="Assets.xcassets\call_full.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Storyboard\LaunchScreen.storyboard" />

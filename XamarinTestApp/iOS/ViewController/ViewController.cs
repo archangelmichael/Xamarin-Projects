@@ -20,12 +20,20 @@ namespace XamarinTestApp.iOS
 		{
 			base.ViewDidLoad();
 
+			setCallPossible(false);
 			btnTranslate.TouchUpInside += delegate {
 				translatedNumber = NumberTranslator.ToNumber(tvPhoneNumber.Text);
-				var title = string.Format("Call {0}", translatedNumber);
-				btnCall.SetTitle(title, UIControlState.Normal);
-				lblPhoneNumber.Text = translatedNumber;
-				tvPhoneNumber.ResignFirstResponder();
+				if (translatedNumber != null && translatedNumber.Trim() != "")
+				{
+					var title = string.Format("Call {0}", translatedNumber);
+					lblPhoneNumber.Text = title;
+					setCallPossible(true);
+					tvPhoneNumber.ResignFirstResponder();
+				}
+				else
+				{
+					setCallPossible(false);
+				}
 			};
 
 			btnCall.TouchUpInside += (object sender, EventArgs e) => 
@@ -51,6 +59,23 @@ namespace XamarinTestApp.iOS
 					NavigationController.PushViewController(locationsVC, true);
 				}
 			};
+		}
+
+		private void setCallPossible(bool possible)
+		{
+			if (possible)
+			{
+				btnCall.TintColor = UIColor.Green;
+				btnCall.Enabled = true;
+				ivAvatar.Alpha = 1;
+			}
+			else
+			{
+				lblPhoneNumber.Text = "";
+				btnCall.TintColor = UIColor.Red;
+				btnCall.Enabled = false;
+				ivAvatar.Alpha = 0;
+			}
 		}
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)

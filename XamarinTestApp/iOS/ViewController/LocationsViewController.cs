@@ -33,7 +33,7 @@ namespace XamarinTestApp.iOS
 				var callAnnotation = e.View.Annotation as PhoneCallAnnotation;
 				if (callAnnotation != null)
 				{
-					MKCoordinateSpan mapSpan = new MKCoordinateSpan(50000, 50000);
+					MKCoordinateSpan mapSpan = new MKCoordinateSpan(0.5, 0.5);
 					MKCoordinateRegion mapRegion = new MKCoordinateRegion(callAnnotation.Coordinate, mapSpan);
 					mvLocations.SetRegion(mapRegion, true);
 					//mvLocations.SetRegion(MKCoordinateRegion.FromDistance(callAnnotation.Coordinate, 50000, 50000), true);
