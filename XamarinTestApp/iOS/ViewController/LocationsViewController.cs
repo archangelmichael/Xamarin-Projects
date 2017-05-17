@@ -2,6 +2,7 @@ using System;
 using UIKit;
 using System.Collections.Generic;
 using CoreLocation;
+using MapKit;
 
 namespace XamarinTestApp.iOS
 {
@@ -26,6 +27,18 @@ namespace XamarinTestApp.iOS
 				PhoneCallAnnotation callAnnotation = new PhoneCallAnnotation(callCoordinate, call.GetTitle(), call.GetDateString());
 				mvLocations.AddAnnotation(callAnnotation);
 			}
+
+			mvLocations.DidSelectAnnotationView += (s, e) =>
+			{
+				var callAnnotation = e.View.Annotation as PhoneCallAnnotation;
+				if (callAnnotation != null)
+				{
+					MKCoordinateSpan mapSpan = new MKCoordinateSpan(50000, 50000);
+					MKCoordinateRegion mapRegion = new MKCoordinateRegion(callAnnotation.Coordinate, mapSpan);
+					mvLocations.SetRegion(mapRegion, true);
+					//mvLocations.SetRegion(MKCoordinateRegion.FromDistance(callAnnotation.Coordinate, 50000, 50000), true);
+				}
+			};
 		}
     }
 }
