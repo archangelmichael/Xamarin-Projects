@@ -135,6 +135,7 @@
       <DependentUpon>PhoneCallTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PhoneCallAnnotation.cs" />
+    <Compile Include="View\DrawView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

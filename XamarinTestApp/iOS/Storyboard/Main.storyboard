@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,6 +69,14 @@
                                                 <rect key="frame" x="40" y="136" width="295" height="30"/>
                                                 <state key="normal" title="Show call history"/>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-Ln-HUO" misplaced="YES">
+                                                <rect key="frame" x="137" y="214" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="KvD-5T-1cm"/>
+                                                    <constraint firstAttribute="height" constant="100" id="RNA-Qf-G0u"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -88,7 +95,9 @@
                                             <constraint firstAttribute="trailing" secondItem="13" secondAttribute="trailing" constant="40" id="NjY-BJ-FBV"/>
                                             <constraint firstItem="13" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="Wdi-ag-cGs"/>
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="XhS-H1-rLs"/>
+                                            <constraint firstItem="VWg-Ln-HUO" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="ZmJ-C4-Tpo"/>
                                             <constraint firstAttribute="trailing" secondItem="oBE-Ac-vcx" secondAttribute="trailing" constant="40" id="bcj-sb-Vea"/>
+                                            <constraint firstItem="VWg-Ln-HUO" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="8" id="dfO-a5-nCS"/>
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="ede-Ui-eBo"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="fN0-QO-VoV"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="pMe-kk-NIm" secondAttribute="bottom" constant="6" id="i00-3l-crI"/>
@@ -124,10 +133,11 @@
                         <outlet property="btnShowHistory" destination="xGe-g6-ifW" id="name-outlet-xGe-g6-ifW"/>
                         <outlet property="btnShowLocations" destination="13" id="name-outlet-13"/>
                         <outlet property="btnTranslate" destination="oBE-Ac-vcx" id="name-outlet-oBE-Ac-vcx"/>
+                        <outlet property="ivAvatar" destination="1vZ-0O-D2o" id="name-outlet-1vZ-0O-D2o"/>
                         <outlet property="lblPhoneNumber" destination="5rf-GA-QPL" id="name-outlet-5rf-GA-QPL"/>
                         <outlet property="tvPhoneNumber" destination="pMe-kk-NIm" id="name-outlet-pMe-kk-NIm"/>
                         <segue destination="dU1-tb-zdp" kind="show" identifier="showCallHistory" id="Rjj-Mc-TdX"/>
-                        <outlet property="ivAvatar" destination="1vZ-0O-D2o" id="name-outlet-1vZ-0O-D2o"/>
+                        <outlet property="vDrawing" destination="VWg-Ln-HUO" id="name-outlet-VWg-Ln-HUO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

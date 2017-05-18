@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UIKit;
+using CoreGraphics;
 
 namespace XamarinTestApp.iOS
 {
@@ -59,6 +60,11 @@ namespace XamarinTestApp.iOS
 					NavigationController.PushViewController(locationsVC, true);
 				}
 			};
+
+			DrawView circle = new DrawView(DrawPattern.Circle, 2, UIColor.Blue, UIColor.Yellow, CGPathDrawingMode.FillStroke);
+			circle.Frame = new CGRect(0, 0, vDrawing.Frame.Size.Width, vDrawing.Frame.Size.Height);
+			circle.BackgroundColor = UIColor.Clear;
+			vDrawing.AddSubview(circle);
 		}
 
 		private void setCallPossible(bool possible)

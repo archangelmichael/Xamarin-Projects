@@ -41,6 +41,10 @@ namespace XamarinTestApp.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField tvPhoneNumber { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vDrawing { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (btnCall != null) {
@@ -76,6 +80,11 @@ namespace XamarinTestApp.iOS
             if (tvPhoneNumber != null) {
                 tvPhoneNumber.Dispose ();
                 tvPhoneNumber = null;
+            }
+
+            if (vDrawing != null) {
+                vDrawing.Dispose ();
+                vDrawing = null;
             }
         }
     }
