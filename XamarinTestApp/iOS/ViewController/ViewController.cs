@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UIKit;
 using CoreGraphics;
+using CoreLocation;
 
 namespace XamarinTestApp.iOS
 {
@@ -12,6 +13,8 @@ namespace XamarinTestApp.iOS
 		private const string LOCATIONS_VC_ID = "LocationsViewController";
 		private List<PhoneCall> phoneCalls { get; set; }
 
+		private LocationManager locationManager;
+
 		public ViewController(IntPtr handle) : base(handle)
 		{
 			phoneCalls = new List<PhoneCall>();
@@ -20,6 +23,9 @@ namespace XamarinTestApp.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			locationManager = new LocationManager();
+			locationManager.StartLocationUpdates();
 
 			setCallPossible(false);
 			btnTranslate.TouchUpInside += delegate {
@@ -41,7 +47,11 @@ namespace XamarinTestApp.iOS
 			{
 				if (translatedNumber != null && translatedNumber.Trim() != "")
 				{
-					PhoneCall newPhoneCall = new PhoneCall(translatedNumber, DateTime.Now, 42.698334, 23.319941);
+					CLLocationCoordinate2D location = locationManager.GetLastUserLocation().Coordinate;
+					PhoneCall newPhoneCall = new PhoneCall(translatedNumber, 
+					                                       DateTime.Now,  
+					                                       location.Latitude, 
+					                                       location.Longitude);
 					phoneCalls.Add(newPhoneCall);
 				}
 			};
