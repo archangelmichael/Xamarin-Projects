@@ -8,6 +8,7 @@ namespace XamarinTestApp.iOS
 {
 	public partial class ViewController : UIViewController
 	{
+		bool callsEnabled = false;
 		private string translatedNumber = "";
 		private const string CALLS_VC_SEGUE_ID = "showCallHistory";
 		private const string LOCATIONS_VC_ID = "LocationsViewController";
@@ -27,7 +28,10 @@ namespace XamarinTestApp.iOS
 			locationManager = new LocationManager();
 			locationManager.StartLocationUpdates();
 
-			setCallPossible(false);
+            setCallPossible(false);
+			callsEnabled = false;
+			switchDisableCalls.ValueChanged += SwitchDisableCalls_ValueChanged;
+
 			btnTranslate.TouchUpInside += delegate {
 				translatedNumber = NumberTranslator.ToNumber(tvPhoneNumber.Text);
 				if (translatedNumber != null && translatedNumber.Trim() != "")
@@ -45,14 +49,17 @@ namespace XamarinTestApp.iOS
 
 			btnCall.TouchUpInside += (object sender, EventArgs e) => 
 			{
-				if (translatedNumber != null && translatedNumber.Trim() != "")
+				if (callsEnabled)
 				{
-					CLLocationCoordinate2D location = locationManager.GetLastUserLocation().Coordinate;
-					PhoneCall newPhoneCall = new PhoneCall(translatedNumber, 
-					                                       DateTime.Now,  
-					                                       location.Latitude, 
-					                                       location.Longitude);
-					phoneCalls.Add(newPhoneCall);
+					if (translatedNumber != null && translatedNumber.Trim() != "")
+					{
+						CLLocationCoordinate2D location = locationManager.GetLastUserLocation().Coordinate;
+						PhoneCall newPhoneCall = new PhoneCall(translatedNumber,
+															   DateTime.Now,
+															   location.Latitude,
+															   location.Longitude);
+						phoneCalls.Add(newPhoneCall);
+					}
 				}
 			};
 
@@ -75,6 +82,20 @@ namespace XamarinTestApp.iOS
 			circle.Frame = new CGRect(0, 0, vDrawing.Frame.Size.Width, vDrawing.Frame.Size.Height);
 			circle.BackgroundColor = UIColor.Clear;
 			vDrawing.AddSubview(circle);
+		}
+
+		void SwitchDisableCalls_ValueChanged(object sender, EventArgs e)
+		{
+			if (switchDisableCalls.On)
+			{
+				callsEnabled = true;
+				labelDisableCalls.Text = "Disable calls";
+			}
+			else
+			{
+				callsEnabled = false;
+				labelDisableCalls.Text = "Enable calls";
+			}
 		}
 
 		private void setCallPossible(bool possible)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UEB-2c-8K0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UEB-2c-8K0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,33 +26,27 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3I-nb-clF" misplaced="YES">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMe-kk-NIm" misplaced="YES">
-                                                <rect key="frame" x="40" y="20" width="295" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rf-GA-QPL" misplaced="YES">
-                                                <rect key="frame" x="100" y="106" width="175" height="0.0"/>
+                                                <rect key="frame" x="100" y="127" width="175" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-Ac-vcx" misplaced="YES">
-                                                <rect key="frame" x="40" y="56" width="295" height="30"/>
+                                                <rect key="frame" x="40" y="77" width="295" height="30"/>
                                                 <state key="normal" title="Translate">
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_full" translatesAutoresizingMaskIntoConstraints="NO" id="1vZ-0O-D2o">
-                                                <rect key="frame" x="40" y="81" width="50" height="50"/>
+                                                <rect key="frame" x="40" y="102" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="vPH-iV-5Oh"/>
                                                     <constraint firstAttribute="width" constant="50" id="vg2-9D-Cay"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArT-4w-6fY" misplaced="YES">
-                                                <rect key="frame" x="295" y="86" width="40" height="40"/>
+                                                <rect key="frame" x="295" y="107" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="6sc-Ly-vAR"/>
                                                     <constraint firstAttribute="width" constant="40" id="NVB-rk-Kcn"/>
@@ -60,23 +54,38 @@
                                                 <state key="normal" image="call_full"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13" misplaced="YES">
-                                                <rect key="frame" x="40" y="176" width="295" height="30"/>
+                                                <rect key="frame" x="40" y="197" width="295" height="30"/>
                                                 <state key="normal" title="Show locations history">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGe-g6-ifW" misplaced="YES">
-                                                <rect key="frame" x="40" y="136" width="295" height="30"/>
+                                                <rect key="frame" x="40" y="157" width="295" height="30"/>
                                                 <state key="normal" title="Show call history"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-Ln-HUO" misplaced="YES">
-                                                <rect key="frame" x="137" y="214" width="100" height="100"/>
+                                                <rect key="frame" x="137" y="235" width="100" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="KvD-5T-1cm"/>
                                                     <constraint firstAttribute="height" constant="100" id="RNA-Qf-G0u"/>
                                                 </constraints>
                                             </view>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0nR-Vm-fUD">
+                                                <rect key="frame" x="40" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable calls" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIh-Sj-3kF" misplaced="YES">
+                                                <rect key="frame" x="100" y="5" width="235" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pMe-kk-NIm" misplaced="YES">
+                                                <rect key="frame" x="40" y="41" width="295" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -84,6 +93,7 @@
                                             <constraint firstItem="5rf-GA-QPL" firstAttribute="top" secondItem="oBE-Ac-vcx" secondAttribute="bottom" constant="20" id="27i-l9-ioE"/>
                                             <constraint firstItem="1vZ-0O-D2o" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="5fl-7b-sCa"/>
                                             <constraint firstItem="5rf-GA-QPL" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="83o-uX-zRy"/>
+                                            <constraint firstItem="0nR-Vm-fUD" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="APh-uP-7eV"/>
                                             <constraint firstItem="ArT-4w-6fY" firstAttribute="centerY" secondItem="5rf-GA-QPL" secondAttribute="centerY" id="AQk-fU-NXr"/>
                                             <constraint firstAttribute="height" constant="500" id="CGx-PY-XrG"/>
                                             <constraint firstItem="xGe-g6-ifW" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="D2N-EN-T1H"/>
@@ -91,6 +101,8 @@
                                             <constraint firstItem="xGe-g6-ifW" firstAttribute="top" secondItem="5rf-GA-QPL" secondAttribute="bottom" constant="30" id="FOy-EX-DP1"/>
                                             <constraint firstAttribute="trailing" secondItem="pMe-kk-NIm" secondAttribute="trailing" constant="40" id="FiQ-aD-m41"/>
                                             <constraint firstItem="13" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="JUZ-uV-Zk0"/>
+                                            <constraint firstItem="oIh-Sj-3kF" firstAttribute="centerY" secondItem="0nR-Vm-fUD" secondAttribute="centerY" id="JcJ-6I-ccL"/>
+                                            <constraint firstItem="pMe-kk-NIm" firstAttribute="top" secondItem="0nR-Vm-fUD" secondAttribute="bottom" constant="10" id="KAn-rk-8vS"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="Kn3-fe-VJS"/>
                                             <constraint firstAttribute="trailing" secondItem="13" secondAttribute="trailing" constant="40" id="NjY-BJ-FBV"/>
                                             <constraint firstItem="13" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="Wdi-ag-cGs"/>
@@ -98,15 +110,17 @@
                                             <constraint firstItem="VWg-Ln-HUO" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="ZmJ-C4-Tpo"/>
                                             <constraint firstAttribute="trailing" secondItem="oBE-Ac-vcx" secondAttribute="trailing" constant="40" id="bcj-sb-Vea"/>
                                             <constraint firstItem="VWg-Ln-HUO" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="8" id="dfO-a5-nCS"/>
+                                            <constraint firstAttribute="trailing" secondItem="oIh-Sj-3kF" secondAttribute="trailing" constant="40" id="eYd-ro-MZH"/>
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="ede-Ui-eBo"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="fN0-QO-VoV"/>
+                                            <constraint firstItem="oIh-Sj-3kF" firstAttribute="leading" secondItem="0nR-Vm-fUD" secondAttribute="trailing" constant="11" id="fwh-8G-SOV"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="pMe-kk-NIm" secondAttribute="bottom" constant="6" id="i00-3l-crI"/>
-                                            <constraint firstItem="pMe-kk-NIm" firstAttribute="top" secondItem="j3I-nb-clF" secondAttribute="top" constant="20" id="kzz-uH-7Qd"/>
                                             <constraint firstItem="13" firstAttribute="top" secondItem="xGe-g6-ifW" secondAttribute="bottom" constant="10" id="nTT-t6-r8e"/>
                                             <constraint firstItem="5rf-GA-QPL" firstAttribute="leading" secondItem="1vZ-0O-D2o" secondAttribute="trailing" constant="10" id="pFV-UX-guR"/>
                                             <constraint firstAttribute="trailing" secondItem="xGe-g6-ifW" secondAttribute="trailing" constant="40" id="ti5-mN-0eo"/>
                                             <constraint firstItem="1vZ-0O-D2o" firstAttribute="centerY" secondItem="5rf-GA-QPL" secondAttribute="centerY" id="vfV-kt-VvL"/>
                                             <constraint firstItem="xGe-g6-ifW" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="wCb-TX-1K2"/>
+                                            <constraint firstItem="0nR-Vm-fUD" firstAttribute="top" secondItem="j3I-nb-clF" secondAttribute="top" id="zFf-Cu-rr1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -136,13 +150,15 @@
                         <outlet property="ivAvatar" destination="1vZ-0O-D2o" id="name-outlet-1vZ-0O-D2o"/>
                         <outlet property="lblPhoneNumber" destination="5rf-GA-QPL" id="name-outlet-5rf-GA-QPL"/>
                         <outlet property="tvPhoneNumber" destination="pMe-kk-NIm" id="name-outlet-pMe-kk-NIm"/>
-                        <segue destination="dU1-tb-zdp" kind="show" identifier="showCallHistory" id="Rjj-Mc-TdX"/>
                         <outlet property="vDrawing" destination="VWg-Ln-HUO" id="name-outlet-VWg-Ln-HUO"/>
+                        <segue destination="dU1-tb-zdp" kind="show" identifier="showCallHistory" id="Rjj-Mc-TdX"/>
+                        <outlet property="labelDisableCalls" destination="oIh-Sj-3kF" id="name-outlet-oIh-Sj-3kF"/>
+                        <outlet property="switchDisableCalls" destination="0nR-Vm-fUD" id="name-outlet-0nR-Vm-fUD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="557.6" y="26.53673"/>
+            <point key="canvasLocation" x="557.6" y="25.63718"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="hf0-yG-KCU">
@@ -227,4 +243,7 @@
         <image name="avatar_full" width="100" height="100"/>
         <image name="call_full" width="100" height="100"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
 </document>

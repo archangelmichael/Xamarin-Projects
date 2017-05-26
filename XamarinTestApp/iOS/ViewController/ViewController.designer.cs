@@ -35,7 +35,15 @@ namespace XamarinTestApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel labelDisableCalls { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPhoneNumber { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch switchDisableCalls { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -72,9 +80,19 @@ namespace XamarinTestApp.iOS
                 ivAvatar = null;
             }
 
+            if (labelDisableCalls != null) {
+                labelDisableCalls.Dispose ();
+                labelDisableCalls = null;
+            }
+
             if (lblPhoneNumber != null) {
                 lblPhoneNumber.Dispose ();
                 lblPhoneNumber = null;
+            }
+
+            if (switchDisableCalls != null) {
+                switchDisableCalls.Dispose ();
+                switchDisableCalls = null;
             }
 
             if (tvPhoneNumber != null) {
