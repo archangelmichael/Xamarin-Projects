@@ -138,6 +138,10 @@
     <Compile Include="View\PhoneCallAnnotation.cs" />
     <Compile Include="View\DrawView.cs" />
     <Compile Include="Data\LocationManager.cs" />
+    <Compile Include="ViewController\CallsCollectionViewController.cs" />
+    <Compile Include="ViewController\CallsCollectionViewController.designer.cs">
+      <DependentUpon>CallsCollectionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

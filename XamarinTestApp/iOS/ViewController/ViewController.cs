@@ -9,7 +9,7 @@ namespace XamarinTestApp.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		bool callsEnabled = false;
+		bool callsEnabled;
 		private string translatedNumber = "";
 		private const string CALLS_VC_SEGUE_ID = "showCallHistory";
 		private const string LOCATIONS_VC_ID = "LocationsViewController";

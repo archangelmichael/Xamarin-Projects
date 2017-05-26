@@ -24,9 +24,30 @@ namespace XamarinTestApp.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			// Perform any additional setup after loading the view, typically from a nib.
+
+			var rightBarButton = new UIBarButtonItem(
+				"Switch",
+				UIBarButtonItemStyle.Done,
+				(object sender, EventArgs e) =>
+			{
+				PerformSegue(CallsCollectionViewController.SegueId, this);
+			});
+
+			NavigationItem.RightBarButtonItem = rightBarButton;
 		}
 
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+			base.PrepareForSegue(segue, sender);
+
+			var segueId = segue.Identifier;
+			if (segueId == CallsCollectionViewController.SegueId)
+			{
+				var callsCollectionVC = segue.DestinationViewController as CallsCollectionViewController;
+				callsCollectionVC.calls = phoneCalls;
+			}
+		}
+	
 		public override void DidReceiveMemoryWarning()
 		{
 			base.DidReceiveMemoryWarning();
