@@ -33,6 +33,7 @@ namespace XamarinTestApp
 				}
 				// otherwise we've skipped a non-numeric char
 			}
+
 			return newNumber.ToString();
 		}
 

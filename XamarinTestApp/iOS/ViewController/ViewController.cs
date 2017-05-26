@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UIKit;
 using CoreGraphics;
 using CoreLocation;
+using System.Threading.Tasks;
 
 namespace XamarinTestApp.iOS
 {
@@ -33,18 +34,7 @@ namespace XamarinTestApp.iOS
 			switchDisableCalls.ValueChanged += SwitchDisableCalls_ValueChanged;
 
 			btnTranslate.TouchUpInside += delegate {
-				translatedNumber = NumberTranslator.ToNumber(tvPhoneNumber.Text);
-				if (translatedNumber != null && translatedNumber.Trim() != "")
-				{
-					var title = string.Format("Call {0}", translatedNumber);
-					lblPhoneNumber.Text = title;
-					setCallPossible(true);
-					tvPhoneNumber.ResignFirstResponder();
-				}
-				else
-				{
-					setCallPossible(false);
-				}
+				translatePhoneNumber(tvPhoneNumber.Text);
 			};
 
 			btnCall.TouchUpInside += (object sender, EventArgs e) => 
@@ -112,6 +102,40 @@ namespace XamarinTestApp.iOS
 				btnCall.TintColor = UIColor.Red;
 				btnCall.Enabled = false;
 				ivAvatar.Alpha = 0;
+			}
+		}
+
+		async void translatePhoneNumber(string number)
+		{
+
+			lblPhoneNumber.Text = "";
+			while (number != "")
+			{
+				await Task.Factory.StartNew(() =>
+				{
+					var letter = number.Substring(0, 1);
+					var digit = NumberTranslator.ToNumber(letter);
+					InvokeOnMainThread(() =>
+					{
+						lblPhoneNumber.Text = lblPhoneNumber.Text + digit;
+						number = number.Substring(1);
+						progressTranslation.Progress = (float)lblPhoneNumber.Text.Length/tvPhoneNumber.Text.Length;
+					});
+				});
+
+				await Task.Delay(150);
+			}
+
+			translatedNumber = lblPhoneNumber.Text;
+			if (translatedNumber != null && translatedNumber.Trim() != "")
+			{
+				var title = string.Format("Call {0}", translatedNumber);
+				setCallPossible(true);
+				tvPhoneNumber.ResignFirstResponder();
+			}
+			else
+			{
+				setCallPossible(false);
 			}
 		}
 

@@ -43,6 +43,10 @@ namespace XamarinTestApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIProgressView progressTranslation { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch switchDisableCalls { get; set; }
 
         [Outlet]
@@ -88,6 +92,11 @@ namespace XamarinTestApp.iOS
             if (lblPhoneNumber != null) {
                 lblPhoneNumber.Dispose ();
                 lblPhoneNumber = null;
+            }
+
+            if (progressTranslation != null) {
+                progressTranslation.Dispose ();
+                progressTranslation = null;
             }
 
             if (switchDisableCalls != null) {

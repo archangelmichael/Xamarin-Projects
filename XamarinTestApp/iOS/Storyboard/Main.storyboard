@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,6 +87,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hGK-En-MYc" misplaced="YES" progressViewStyle="bar">
+                                                <rect key="frame" x="100" y="131" width="175" height="2"/>
+                                            </progressView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -105,6 +109,7 @@
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="top" secondItem="0nR-Vm-fUD" secondAttribute="bottom" constant="10" id="KAn-rk-8vS"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="Kn3-fe-VJS"/>
                                             <constraint firstAttribute="trailing" secondItem="13" secondAttribute="trailing" constant="40" id="NjY-BJ-FBV"/>
+                                            <constraint firstItem="hGK-En-MYc" firstAttribute="top" secondItem="5rf-GA-QPL" secondAttribute="bottom" constant="4" id="UrQ-T4-9kb"/>
                                             <constraint firstItem="13" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="Wdi-ag-cGs"/>
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="XhS-H1-rLs"/>
                                             <constraint firstItem="VWg-Ln-HUO" firstAttribute="centerX" secondItem="j3I-nb-clF" secondAttribute="centerX" id="ZmJ-C4-Tpo"/>
@@ -114,10 +119,12 @@
                                             <constraint firstItem="pMe-kk-NIm" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="ede-Ui-eBo"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="fN0-QO-VoV"/>
                                             <constraint firstItem="oIh-Sj-3kF" firstAttribute="leading" secondItem="0nR-Vm-fUD" secondAttribute="trailing" constant="11" id="fwh-8G-SOV"/>
+                                            <constraint firstItem="hGK-En-MYc" firstAttribute="trailing" secondItem="5rf-GA-QPL" secondAttribute="trailing" id="hai-tI-gbX"/>
                                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="pMe-kk-NIm" secondAttribute="bottom" constant="6" id="i00-3l-crI"/>
                                             <constraint firstItem="13" firstAttribute="top" secondItem="xGe-g6-ifW" secondAttribute="bottom" constant="10" id="nTT-t6-r8e"/>
                                             <constraint firstItem="5rf-GA-QPL" firstAttribute="leading" secondItem="1vZ-0O-D2o" secondAttribute="trailing" constant="10" id="pFV-UX-guR"/>
                                             <constraint firstAttribute="trailing" secondItem="xGe-g6-ifW" secondAttribute="trailing" constant="40" id="ti5-mN-0eo"/>
+                                            <constraint firstItem="hGK-En-MYc" firstAttribute="leading" secondItem="5rf-GA-QPL" secondAttribute="leading" id="u7e-Uz-hFs"/>
                                             <constraint firstItem="1vZ-0O-D2o" firstAttribute="centerY" secondItem="5rf-GA-QPL" secondAttribute="centerY" id="vfV-kt-VvL"/>
                                             <constraint firstItem="xGe-g6-ifW" firstAttribute="leading" secondItem="j3I-nb-clF" secondAttribute="leading" constant="40" id="wCb-TX-1K2"/>
                                             <constraint firstItem="0nR-Vm-fUD" firstAttribute="top" secondItem="j3I-nb-clF" secondAttribute="top" id="zFf-Cu-rr1"/>
@@ -148,12 +155,13 @@
                         <outlet property="btnShowLocations" destination="13" id="name-outlet-13"/>
                         <outlet property="btnTranslate" destination="oBE-Ac-vcx" id="name-outlet-oBE-Ac-vcx"/>
                         <outlet property="ivAvatar" destination="1vZ-0O-D2o" id="name-outlet-1vZ-0O-D2o"/>
+                        <outlet property="labelDisableCalls" destination="oIh-Sj-3kF" id="name-outlet-oIh-Sj-3kF"/>
                         <outlet property="lblPhoneNumber" destination="5rf-GA-QPL" id="name-outlet-5rf-GA-QPL"/>
+                        <outlet property="switchDisableCalls" destination="0nR-Vm-fUD" id="name-outlet-0nR-Vm-fUD"/>
                         <outlet property="tvPhoneNumber" destination="pMe-kk-NIm" id="name-outlet-pMe-kk-NIm"/>
                         <outlet property="vDrawing" destination="VWg-Ln-HUO" id="name-outlet-VWg-Ln-HUO"/>
                         <segue destination="dU1-tb-zdp" kind="show" identifier="showCallHistory" id="Rjj-Mc-TdX"/>
-                        <outlet property="labelDisableCalls" destination="oIh-Sj-3kF" id="name-outlet-oIh-Sj-3kF"/>
-                        <outlet property="switchDisableCalls" destination="0nR-Vm-fUD" id="name-outlet-0nR-Vm-fUD"/>
+                        <outlet property="progressTranslation" destination="hGK-En-MYc" id="name-outlet-hGK-En-MYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -243,7 +251,4 @@
         <image name="avatar_full" width="100" height="100"/>
         <image name="call_full" width="100" height="100"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedScreenMetrics key="destination" type="retina47"/>
-    </simulatedMetricsContainer>
 </document>
