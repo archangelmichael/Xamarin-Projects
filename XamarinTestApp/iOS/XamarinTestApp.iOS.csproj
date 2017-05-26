@@ -111,6 +111,7 @@
     <InterfaceDefinition Include="Storyboard\LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Storyboard\Main.storyboard" />
     <InterfaceDefinition Include="View\PhoneCallTableViewCell.xib" />
+    <InterfaceDefinition Include="View\CallCollectionViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -141,6 +142,10 @@
     <Compile Include="ViewController\CallsCollectionViewController.cs" />
     <Compile Include="ViewController\CallsCollectionViewController.designer.cs">
       <DependentUpon>CallsCollectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CallCollectionViewCell.cs" />
+    <Compile Include="View\CallCollectionViewCell.designer.cs">
+      <DependentUpon>CallCollectionViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

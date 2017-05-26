@@ -14,8 +14,16 @@ namespace XamarinTestApp.iOS
     [Register ("CallsCollectionViewController")]
     partial class CallsCollectionViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UICollectionView collectionView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (collectionView != null) {
+                collectionView.Dispose ();
+                collectionView = null;
+            }
         }
     }
 }

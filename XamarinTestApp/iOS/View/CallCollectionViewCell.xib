@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cZE-iV-UFb" customClass="CallCollectionViewCell" reuseIdentifier="CallCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ds-ew-NZi" text="Cell title">
+                        <rect key="frame" x="8" y="8" width="134" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2l-Nm-eLh" text="Cell subtitle">
+                        <rect key="frame" x="8" y="32" width="134" height="19"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="x2l-Nm-eLh" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="8" id="4Kn-jf-lts"/>
+                <constraint firstAttribute="trailing" secondItem="x2l-Nm-eLh" secondAttribute="trailing" constant="8" id="7lk-sp-4oY"/>
+                <constraint firstItem="0ds-ew-NZi" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="8" id="RZe-Ws-297"/>
+                <constraint firstItem="x2l-Nm-eLh" firstAttribute="top" secondItem="0ds-ew-NZi" secondAttribute="bottom" constant="2" id="UL4-xx-CNn"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="x2l-Nm-eLh" secondAttribute="bottom" constant="8" id="bYG-ba-Qxb"/>
+                <constraint firstAttribute="trailing" secondItem="0ds-ew-NZi" secondAttribute="trailing" constant="8" id="dEd-ks-ae3"/>
+                <constraint firstItem="0ds-ew-NZi" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" constant="8" id="jTI-wr-C2A"/>
+            </constraints>
+            <size key="customSize" width="154" height="75"/>
+            <point key="canvasLocation" x="77" y="64"/>
+            <connections>
+                <outlet property="labelTitle" destination="0ds-ew-NZi" id="name-outlet-0ds-ew-NZi"/>
+                <outlet property="labelSubtitle" destination="x2l-Nm-eLh" id="name-outlet-x2l-Nm-eLh"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="avatar_full" width="100" height="100"/>
+        <image name="call_full" width="100" height="100"/>
+    </resources>
+</document>
