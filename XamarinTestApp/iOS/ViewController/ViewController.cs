@@ -5,6 +5,7 @@ using CoreGraphics;
 using CoreLocation;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
 
 namespace XamarinTestApp.iOS
 {
@@ -34,8 +35,9 @@ namespace XamarinTestApp.iOS
 			callsEnabled = false;
 			switchDisableCalls.ValueChanged += SwitchDisableCalls_ValueChanged;
 
-			btnTranslate.TouchUpInside += delegate {
-				translatePhoneNumber(tvPhoneNumber.Text);
+			btnTranslate.TouchUpInside += delegate
+			{
+				TranslatePhoneNumber(tvPhoneNumber.Text);
 			};
 
 			btnCall.TouchUpInside += (object sender, EventArgs e) => 
@@ -85,6 +87,8 @@ namespace XamarinTestApp.iOS
 			circle.Frame = new CGRect(0, 0, vDrawing.Frame.Size.Width, vDrawing.Frame.Size.Height);
 			circle.BackgroundColor = UIColor.Clear;
 			vDrawing.AddSubview(circle);
+
+			//FetchData();
 		}
 
 		void SwitchDisableCalls_ValueChanged(object sender, EventArgs e)
@@ -118,7 +122,7 @@ namespace XamarinTestApp.iOS
 			}
 		}
 
-		async void translatePhoneNumber(string number)
+		async void TranslatePhoneNumber(string number)
 		{
 
 			lblPhoneNumber.Text = "";
@@ -178,6 +182,36 @@ namespace XamarinTestApp.iOS
 			var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 			var filePath = Path.Combine(documentsPath, "last_phone_call.txt");
 			return filePath;
+		}
+
+		void FetchData()
+		{
+			var request = HttpWebRequest.Create("http://www.mobile.bg/pcgi/mobile.cgi?topmenu=1&act=4&adv=11495725980994090&slink=3fr41y");
+			request.ContentType = "application/json";
+			request.Method = "GET";
+
+			using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+			{
+				if (response.StatusCode != HttpStatusCode.OK)
+				{
+					Console.WriteLine("Request failed");
+				}
+				else
+				{
+					using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+					{
+						var content = reader.ReadToEnd();
+						if (string.IsNullOrWhiteSpace(content))
+						{
+							Console.WriteLine("Response is empty");
+						}
+						else
+						{
+							Console.WriteLine(content);
+						}
+					}
+				}
+			}
 		}
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
