@@ -6,6 +6,7 @@ using CoreLocation;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using Foundation;
 
 namespace XamarinTestApp.iOS
 {
@@ -35,6 +36,9 @@ namespace XamarinTestApp.iOS
 			callsEnabled = false;
 			switchDisableCalls.ValueChanged += SwitchDisableCalls_ValueChanged;
 
+			var localizedTranslate = NSBundle.MainBundle.LocalizedString("greet", "");
+			btnTranslate.SetTitle(localizedTranslate, UIControlState.Normal);
+				
 			btnTranslate.TouchUpInside += delegate
 			{
 				TranslatePhoneNumber(tvPhoneNumber.Text);

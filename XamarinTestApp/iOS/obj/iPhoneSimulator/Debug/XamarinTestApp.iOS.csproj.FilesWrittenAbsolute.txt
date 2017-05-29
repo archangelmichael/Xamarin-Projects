@@ -10,3 +10,10 @@
 /Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.dll
 /Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.pdb
 /Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/Base.iproj/Localizable.strings
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/de.iproj/Localizable.strings
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/Base.Iproj/Localizable.strings
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/de.Iproj/Localizable.strings
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/en.Iproj/Localizable.strings
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/de.lproj/Localizable.strings
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.1-10.3/optimized/Base.lproj/Localizable.strings

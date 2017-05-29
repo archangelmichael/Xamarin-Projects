@@ -109,6 +109,8 @@
     <Folder Include="Assets.xcassets\avatar_full.imageset\" />
     <Folder Include="Assets.xcassets\call_full.imageset\" />
     <Folder Include="Data\" />
+    <Folder Include="Resources\de.lproj\" />
+    <Folder Include="Resources\Base.lproj\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Storyboard\LaunchScreen.storyboard" />
@@ -157,6 +159,10 @@
       <Version>7.0.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\de.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
