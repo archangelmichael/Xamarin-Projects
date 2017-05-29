@@ -9,3 +9,4 @@
 /Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/obj/iPhoneSimulator/Debug/XamarinTestApp.iOS.pdb
 /Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.dll
 /Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/XamarinTestApp.pdb
+/Users/radi/repositories/Xamarin-Projects/XamarinTestApp/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll

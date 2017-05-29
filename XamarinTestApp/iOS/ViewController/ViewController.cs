@@ -4,6 +4,7 @@ using UIKit;
 using CoreGraphics;
 using CoreLocation;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace XamarinTestApp.iOS
 {
@@ -49,7 +50,19 @@ namespace XamarinTestApp.iOS
 															   location.Latitude,
 															   location.Longitude);
 						phoneCalls.Add(newPhoneCall);
+						SaveLastPhoneCall(newPhoneCall);
 					}
+				}
+			};
+
+			btnShowLastCall.TouchUpInside += (object sender, EventArgs e) =>
+			{
+				var call = GetLastPhoneCall();
+				if (call != null)
+				{
+					var okAlertController = UIAlertController.Create("Last call", string.Format("To {0} at {1}", call.GetTitle(), call.GetDateString()), UIAlertControllerStyle.Alert);
+					okAlertController.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+					PresentViewController(okAlertController, true, null);
 				}
 			};
 
@@ -137,6 +150,34 @@ namespace XamarinTestApp.iOS
 			{
 				setCallPossible(false);
 			}
+		}
+
+		void SaveLastPhoneCall(PhoneCall call)
+		{
+			string jsonCall = Newtonsoft.Json.JsonConvert.SerializeObject(call);
+			Console.WriteLine (jsonCall);
+			File.WriteAllText(GetLastPhoneCallFilePath(), jsonCall);
+		}
+
+		PhoneCall GetLastPhoneCall()
+		{
+			var filePath = GetLastPhoneCallFilePath();
+			if (File.Exists(filePath))
+			{
+				string jsonCall = File.ReadAllText(filePath);
+				PhoneCall call = Newtonsoft.Json.JsonConvert.DeserializeObject<PhoneCall>(jsonCall);
+				Console.WriteLine("Last Call to: {0} at {1}", call.GetTitle(), call.GetDateString());
+				return call;
+			}
+
+			return null;
+		}
+
+		string GetLastPhoneCallFilePath()
+		{
+			var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+			var filePath = Path.Combine(documentsPath, "last_phone_call.txt");
+			return filePath;
 		}
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)

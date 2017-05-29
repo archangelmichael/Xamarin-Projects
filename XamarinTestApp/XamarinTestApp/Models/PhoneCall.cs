@@ -3,10 +3,10 @@ namespace XamarinTestApp
 {
 	public class PhoneCall
 	{
-		private string title;
-		private DateTime date;
-		private double latitude;
-		private double longitude;
+		public string title { get; set; }
+		public DateTime date { get; set; }
+		public double latitude { get; set; }
+		public double longitude { get; set; }
 
 		public PhoneCall(string title, DateTime date, double latitude, double longitude)
 		{

@@ -23,6 +23,10 @@ namespace XamarinTestApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnShowLastCall { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnShowLocations { get; set; }
 
         [Outlet]
@@ -67,6 +71,11 @@ namespace XamarinTestApp.iOS
             if (btnShowHistory != null) {
                 btnShowHistory.Dispose ();
                 btnShowHistory = null;
+            }
+
+            if (btnShowLastCall != null) {
+                btnShowLastCall.Dispose ();
+                btnShowLastCall = null;
             }
 
             if (btnShowLocations != null) {
