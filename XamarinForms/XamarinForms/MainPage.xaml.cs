@@ -29,7 +29,7 @@ namespace XamarinForms
 
 		async void OnCall(object sender, EventArgs e)
 		{
-			if (await this.DisplayAlert(
+			if (await DisplayAlert(
 					"Dial a Number",
 					"Would you like to call " + translatedNumber + "?",
 					"Yes",
@@ -37,8 +37,17 @@ namespace XamarinForms
 			{
 				var dialer = DependencyService.Get<IDialer>();
 				if (dialer != null)
+				{
+					App.PhoneNumbers.Add (translatedNumber);
+					callHistoryButton.IsEnabled = true;
 					dialer.Dial(translatedNumber);
-			}
+				}
+            }
+		}
+
+		async void OnCallHistory(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new HistoryPage());
 		}
 	}
 }

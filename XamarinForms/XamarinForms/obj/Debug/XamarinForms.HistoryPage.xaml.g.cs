@@ -11,12 +11,12 @@
 namespace XamarinForms {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/radi/repositories/Xamarin-Projects/XamarinForms/XamarinForms/XamarinFormsPage.xaml")]
-    public partial class XamarinFormsPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/radi/repositories/Xamarin-Projects/XamarinForms/XamarinForms/HistoryPage.xaml")]
+    public partial class HistoryPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(XamarinFormsPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(HistoryPage));
         }
     }
 }
