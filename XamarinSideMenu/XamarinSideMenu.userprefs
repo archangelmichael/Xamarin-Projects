@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{11A847D4-7074-4657-AC9E-B7FA874C661C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+    <Files>
+      <File FileName="iOS/ViewControllers/MenuViewController.cs" Line="21" Column="95" />
+      <File FileName="iOS/ViewControllers/ContentViewController.cs" Line="20" Column="6" />
+      <File FileName="iOS/ViewControllers/SubcontentViewController.cs" Line="13" Column="3" />
+      <File FileName="iOS/ViewControllers/Content2ViewController.cs" Line="16" Column="49" />
+      <File FileName="iOS/ViewControllers/NavViewController.cs" Line="12" Column="31" />
+      <File FileName="iOS/ViewControllers/ViewController.cs" Line="20" Column="37" />
+      <File FileName="iOS/Main.cs" Line="21" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="24" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.XamarinSideMenu.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B400713B-EAED-47DE-B6CA-3EF0B2F29C4D" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
