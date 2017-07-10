@@ -1,40 +1,98 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
-	<dependencies>
-		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735" />
-	</dependencies>
-	<scenes>
-		<!--View Controller-->
-		<scene sceneID="tne-QT-ifu">
-			<objects>
-				<viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-					<layoutGuides>
-						<viewControllerLayoutGuide type="top" id="y3c-jy-aDJ" />
-						<viewControllerLayoutGuide type="bottom" id="wfy-db-euE" />
-					</layoutGuides>
-					<view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-						<rect key="frame" x="0.0" y="0.0" width="600" height="600" />
-						<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-						<subviews>
-							<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-Ac-vcx">
-								<rect key="frame" x="224" y="285" width="152" height="30" />
-								<state key="normal" title="Hello World, Click Me!">
-									<color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite" />
-								</state>
-							</button>
-						</subviews>
-						<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite" />
-						<constraints>
-							<constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HiD-uS-i16" />
-							<constraint firstItem="oBE-Ac-vcx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YgX-7e-bMc" />
-						</constraints>
-					</view>
-					<connections>
-						<outlet property="Button" destination="oBE-Ac-vcx" id="OkX-0Z-gth" />
-					</connections>
-				</viewController>
-				<placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder" />
-			</objects>
-		</scene>
-	</scenes>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-sN-Ilz" misplaced="YES">
+                                <rect key="frame" x="20" y="48" width="335" height="210"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="input" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35o-Rm-39q" misplaced="YES">
+                                        <rect key="frame" x="137" y="0.0" width="62" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-KB-4lv" misplaced="YES">
+                                        <rect key="frame" x="148" y="44" width="40" height="34"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUX-50-2OI" misplaced="YES">
+                                        <rect key="frame" x="148" y="88" width="40" height="34"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Load">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j29-XC-WQr" misplaced="YES">
+                                        <rect key="frame" x="141" y="132" width="53" height="34"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJb-eO-obU" misplaced="YES">
+                                        <rect key="frame" x="145" y="176" width="46" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="j29-XC-WQr" secondAttribute="trailing" id="4wV-6x-mJc"/>
+                                    <constraint firstAttribute="trailing" secondItem="35o-Rm-39q" secondAttribute="trailing" id="5St-kK-5Ft"/>
+                                    <constraint firstItem="35o-Rm-39q" firstAttribute="leading" secondItem="oyc-sN-Ilz" secondAttribute="leading" id="9zc-Ae-GT1"/>
+                                    <constraint firstAttribute="trailing" secondItem="mJb-eO-obU" secondAttribute="trailing" id="BNC-XC-Tth"/>
+                                    <constraint firstItem="AUX-50-2OI" firstAttribute="leading" secondItem="oyc-sN-Ilz" secondAttribute="leading" id="c5T-6K-maW"/>
+                                    <constraint firstItem="mJb-eO-obU" firstAttribute="leading" secondItem="oyc-sN-Ilz" secondAttribute="leading" id="eZX-Sh-wOS"/>
+                                    <constraint firstItem="j29-XC-WQr" firstAttribute="leading" secondItem="oyc-sN-Ilz" secondAttribute="leading" id="ftg-0g-DgR"/>
+                                    <constraint firstItem="xtx-KB-4lv" firstAttribute="leading" secondItem="oyc-sN-Ilz" secondAttribute="leading" id="qtT-FJ-7mk"/>
+                                    <constraint firstAttribute="trailing" secondItem="AUX-50-2OI" secondAttribute="trailing" id="rf0-DZ-Cx0"/>
+                                    <constraint firstAttribute="trailing" secondItem="xtx-KB-4lv" secondAttribute="trailing" id="uzp-B4-maD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oyc-sN-Ilz" secondAttribute="trailing" constant="20" id="JOd-7V-qh2"/>
+                            <constraint firstItem="oyc-sN-Ilz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="fK3-Eu-kFr"/>
+                            <constraint firstItem="oyc-sN-Ilz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="lJv-Od-ilB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSave" destination="xtx-KB-4lv" id="name-outlet-xtx-KB-4lv"/>
+                        <outlet property="btnLoad" destination="AUX-50-2OI" id="name-outlet-AUX-50-2OI"/>
+                        <outlet property="btnDelete" destination="j29-XC-WQr" id="name-outlet-j29-XC-WQr"/>
+                        <outlet property="tfInput" destination="35o-Rm-39q" id="name-outlet-35o-Rm-39q"/>
+                        <outlet property="lblResult" destination="mJb-eO-obU" id="name-outlet-mJb-eO-obU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="11"/>
+        </scene>
+    </scenes>
 </document>

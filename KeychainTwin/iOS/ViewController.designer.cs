@@ -8,7 +8,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace KeychainX.iOS
+namespace KeychainTwin.iOS
 {
     [Register ("ViewController")]
     partial class ViewController
@@ -25,14 +25,6 @@ namespace KeychainX.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnSave { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblResult { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField tfInput { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (btnDelete != null) {
@@ -48,16 +40,6 @@ namespace KeychainX.iOS
             if (btnSave != null) {
                 btnSave.Dispose ();
                 btnSave = null;
-            }
-
-            if (lblResult != null) {
-                lblResult.Dispose ();
-                lblResult = null;
-            }
-
-            if (tfInput != null) {
-                tfInput.Dispose ();
-                tfInput = null;
             }
         }
     }

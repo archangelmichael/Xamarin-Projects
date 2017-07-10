@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>KeychainX</string>
+	<string>KeychainTwin</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.oryx.testapp</string>
+	<string>com.oryx.testid</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

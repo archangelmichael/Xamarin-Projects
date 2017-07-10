@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{8124D55F-372D-45BF-8DDE-97D7A12FABAB}</ProjectGuid>
+    <ProjectGuid>{B16B5FD8-BBF7-414A-A591-2F35FB39CCAF}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>KeychainX.iOS</RootNamespace>
-    <AssemblyName>KeychainX.iOS</AssemblyName>
+    <RootNamespace>KeychainTwin.iOS</RootNamespace>
+    <AssemblyName>KeychainTwin.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -23,7 +23,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <IOSDebuggerPort>33859</IOSDebuggerPort>
+    <IOSDebuggerPort>12803</IOSDebuggerPort>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -87,9 +87,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KeychainX\KeychainX.csproj">
-      <Project>{49E8A7FF-64D2-4CCF-BF90-6CD1E7CBCD64}</Project>
-      <Name>KeychainX</Name>
+    <ProjectReference Include="..\KeychainTwin\KeychainTwin.csproj">
+      <Project>{360EE43E-7977-44C0-A501-FC6A2589AB3D}</Project>
+      <Name>KeychainTwin</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -115,7 +115,6 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Keychain.cs" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="square.valet">

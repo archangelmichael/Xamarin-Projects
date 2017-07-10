@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{B16B5FD8-BBF7-414A-A591-2F35FB39CCAF}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController.cs">
+    <Files>
+      <File FileName="iOS/ViewController.cs" Line="32" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/radi/repositories/Xamarin-Projects/KeychainTwin/iOS/ViewController.cs" relfile="iOS/ViewController.cs" line="41" column="1" />
+      <Breakpoint file="/Users/radi/repositories/Xamarin-Projects/KeychainTwin/iOS/ViewController.cs" relfile="iOS/ViewController.cs" line="35" column="1" />
+      <Breakpoint file="/Users/radi/repositories/Xamarin-Projects/KeychainTwin/iOS/ViewController.cs" relfile="iOS/ViewController.cs" line="29" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.KeychainTwin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d93ef6daa7225b5b6e0a440c5c45a030259814b4" />
+</Properties>

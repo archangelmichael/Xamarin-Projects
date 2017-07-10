@@ -1,10 +1,16 @@
 ﻿<Properties StartupConfiguration="{8124D55F-372D-45BF-8DDE-97D7A12FABAB}|Default">
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Keychain.cs">
+    <Files>
+      <File FileName="iOS/ViewController.cs" Line="40" Column="44" />
+      <File FileName="iOS/Keychain.cs" Line="17" Column="2" />
+      <File FileName="iOS/Entitlements.plist" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.KeychainX.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B400713B-EAED-47DE-B6CA-3EF0B2F29C4D" />
+  <MonoDevelop.Ide.ItemProperties.KeychainX.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d93ef6daa7225b5b6e0a440c5c45a030259814b4" />
 </Properties>
