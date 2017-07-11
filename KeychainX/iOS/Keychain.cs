@@ -37,6 +37,7 @@ namespace KeychainX.iOS
 			{
 				ValueData = NSData.FromString(value),
 				Generic = NSData.FromString(key),
+				Service = KeychainService,
 				Account = key,
 				AccessGroup = KeychainGroup
 			};
@@ -52,6 +53,7 @@ namespace KeychainX.iOS
 			var rec = new SecRecord(SecKind.GenericPassword)
 			{
 				Generic = NSData.FromString(key),
+				Service = KeychainService,
 				Account = key,
 				AccessGroup = KeychainGroup
 			};
@@ -80,6 +82,7 @@ namespace KeychainX.iOS
 			var rec = new SecRecord(SecKind.GenericPassword)
 			{
 				Generic = NSData.FromString(key),
+				Service = KeychainService,
 				Account = key,
 				AccessGroup = KeychainGroup
 			};

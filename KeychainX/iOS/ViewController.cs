@@ -9,7 +9,7 @@ namespace KeychainX.iOS
 		public const string CERTIFICATE_KEY = "certificate-key";
 		public const string CERTIFICATE_GROUP = "P4JVA28GY3.com.oryx.shared.keychain";
 		public const string CERTIFICATE_SERVICE = "UConnect";
-		bool userComponent = true;
+		bool userComponent = false;
 
 		string inputValue
 		{
@@ -38,19 +38,25 @@ namespace KeychainX.iOS
 				btnSave.TouchUpInside += (sender, e) =>
 				{
 					var result = valet.SetString("original data", CERTIFICATE_KEY);
-					Console.WriteLine(result.ToString());
+					Log(result.ToString());
 				};
 
 				btnLoad.TouchUpInside += (sender, e) =>
 				{
 					var result = valet.GetString(CERTIFICATE_KEY);
-					Console.WriteLine(result);
+					if (result != null)
+					{
+						Log(result.ToString());	
+					}
+					else {
+						Log("load failed");
+					}
 				};
 
 				btnDelete.TouchUpInside += (sender, e) =>
 				{
 					var result = valet.RemoveObject(CERTIFICATE_KEY);
-					Console.WriteLine(result.ToString());
+                    Log(result.ToString());
 				};
 			}
 			else
@@ -72,13 +78,13 @@ namespace KeychainX.iOS
 				btnLoad.TouchUpInside += (object sender, EventArgs e) =>
 				{
 					var result = Keychain.GetData(Keychain.CERTIFICATE_KEY);
-					Console.WriteLine(result);
+					Log(string.Format(" Load {0}",result));
 				};
 
 				btnDelete.TouchUpInside += (object sender, EventArgs e) =>
 				{
 					var result = Keychain.RemoveData(Keychain.CERTIFICATE_KEY);
-					Console.WriteLine(result);
+					Log(string.Format(" Delete {0}", result));
 				};
 			}
 		}
