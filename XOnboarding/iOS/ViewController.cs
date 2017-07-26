@@ -1,12 +1,11 @@
 ﻿using System;
-
 using UIKit;
 
 namespace XOnboarding.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		int count = 1;
+		ProgressView progress;
 
 		public ViewController(IntPtr handle) : base(handle)
 		{
@@ -15,20 +14,32 @@ namespace XOnboarding.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			AddProgressView();
 
-			// Perform any additional setup after loading the view, typically from a nib.
-			Button.AccessibilityIdentifier = "myButton";
-			Button.TouchUpInside += delegate
-			{
-				var title = string.Format("{0} clicks!", count++);
-				Button.SetTitle(title, UIControlState.Normal);
-			};
+			btnLoad.TouchUpInside += (sender, e) => { SetRandomProgress(); };
 		}
 
-		public override void DidReceiveMemoryWarning()
+		void AddProgressView()
 		{
-			base.DidReceiveMemoryWarning();
-			// Release any cached data, images, etc that aren't in use.		
+			progress = new ProgressView()
+			{
+				MinValue = 0,
+				MaxValue = 180,
+				ClockwiseDirection = false,
+				StrokeColor = UIColor.Green,
+				StrokeWidth = 20.0f,
+				AnimationDuration = 1
+			};
+
+			Utils.AddResizableView(progress, vProgress);
+		}
+
+		void SetRandomProgress()
+		{
+			Random rnd = new Random();
+			int days = rnd.Next(0, 180);
+
+			progress.SetProgress(days, false);
 		}
 	}
 }

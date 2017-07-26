@@ -82,6 +82,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="RadialProgress.iOS">
+      <HintPath>..\packages\Xamarin.RadialProgress.1.0.2\lib\Xamarin.iOS10\RadialProgress.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XOnboarding\XOnboarding.csproj">
@@ -95,14 +98,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Views\ProgressView.xib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </InterfaceDefinition>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -110,6 +118,11 @@
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utils.cs" />
+    <Compile Include="Views\ProgressView.cs" />
+    <Compile Include="Views\ProgressView.designer.cs">
+      <DependentUpon>ProgressView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
