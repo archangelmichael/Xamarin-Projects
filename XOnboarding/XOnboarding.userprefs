@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{86C46D3B-51CF-4194-9B41-9E5003792783}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Views/ProgressView.cs">
     <Files>
-      <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/ViewController.cs" Line="30" Column="25" />
-      <File FileName="iOS/Views/ProgressView.cs" Line="79" Column="49" />
+      <File FileName="iOS/ViewController.cs" Line="45" Column="59" />
+      <File FileName="iOS/Views/ProgressView.cs" Line="100" Column="4" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +23,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/radi/repositories/Xamarin-Projects/XOnboarding/iOS/Views/ProgressView.cs" relfile="iOS/Views/ProgressView.cs" line="126" column="1" />
+      <Breakpoint file="/Users/radi/repositories/Xamarin-Projects/XOnboarding/iOS/Views/ProgressView.cs" relfile="iOS/Views/ProgressView.cs" line="207" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

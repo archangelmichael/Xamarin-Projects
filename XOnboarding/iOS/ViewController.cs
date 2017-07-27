@@ -14,7 +14,8 @@ namespace XOnboarding.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			AddProgressView();
+			//AddProgressView();
+
 
 			btnLoad.TouchUpInside += (sender, e) => { SetRandomProgress(); };
 		}
@@ -28,7 +29,7 @@ namespace XOnboarding.iOS
 				ClockwiseDirection = false,
 				StrokeColor = UIColor.Green,
 				StrokeWidth = 20.0f,
-				AnimationDuration = 1
+				AnimationDuration = 0.5f
 			};
 
 			Utils.AddResizableView(progress, vProgress);
@@ -38,8 +39,11 @@ namespace XOnboarding.iOS
 		{
 			Random rnd = new Random();
 			int days = rnd.Next(0, 180);
+			// progress.SetProgress(days);
 
-			progress.SetProgress(days, false);
+			lblProgress.Text = days.ToString();
+			ProgressView.AddAnimatedRadialProgressLayer(lblProgress, UIColor.Green, 180, 0, days, 20, ProgressCapStyle.Round, 90, false, 1);
+
 		}
 	}
 }

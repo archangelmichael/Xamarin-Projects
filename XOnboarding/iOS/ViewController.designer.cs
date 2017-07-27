@@ -19,6 +19,10 @@ namespace XOnboarding.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblProgress { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vProgress { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -26,6 +30,11 @@ namespace XOnboarding.iOS
             if (btnLoad != null) {
                 btnLoad.Dispose ();
                 btnLoad = null;
+            }
+
+            if (lblProgress != null) {
+                lblProgress.Dispose ();
+                lblProgress = null;
             }
 
             if (vProgress != null) {

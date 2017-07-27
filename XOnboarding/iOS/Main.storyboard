@@ -30,23 +30,36 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-Ac-vcx" misplaced="YES">
-                                <rect key="frame" x="168" y="319" width="40" height="30"/>
+                                <rect key="frame" x="167" y="617" width="40" height="30"/>
                                 <state key="normal" title="LOAD">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zem-VJ-1aA" misplaced="YES">
+                                <rect key="frame" x="47" y="194" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="O8S-Wn-jfx"/>
+                                    <constraint firstAttribute="width" constant="280" id="QsT-Hb-0ug"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NY8-wi-4xq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Os-nD-AtI"/>
                             <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HiD-uS-i16"/>
-                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YgX-7e-bMc"/>
+                            <constraint firstItem="zem-VJ-1aA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QYv-hi-bok"/>
+                            <constraint firstItem="zem-VJ-1aA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UQb-XV-Icl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBE-Ac-vcx" secondAttribute="bottom" constant="20" id="VN9-lj-CqO"/>
                             <constraint firstItem="NY8-wi-4xq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xTI-js-B39"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="vProgress" destination="NY8-wi-4xq" id="name-outlet-NY8-wi-4xq"/>
                         <outlet property="btnLoad" destination="oBE-Ac-vcx" id="name-outlet-oBE-Ac-vcx"/>
+                        <outlet property="vProgress" destination="NY8-wi-4xq" id="name-outlet-NY8-wi-4xq"/>
+                        <outlet property="lblProgress" destination="zem-VJ-1aA" id="name-outlet-zem-VJ-1aA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
