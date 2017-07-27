@@ -1,22 +1,8 @@
-﻿<Properties StartupConfiguration="{86C46D3B-51CF-4194-9B41-9E5003792783}|Default">
+﻿<Properties StartupConfiguration="{223122BF-8803-41ED-99B8-C1F687554F7B}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController.cs">
     <Files>
       <File FileName="iOS/ViewController.cs" Line="18" Column="4" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="XOnboarding" expanded="True">
-            <Node name="XOnboarding.iOS" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="ProgressView.cs" expanded="True" />
-              </Node>
-              <Node name="ViewController.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -26,5 +12,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.XOnboarding.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B400713B-EAED-47DE-B6CA-3EF0B2F29C4D" />
+  <MonoDevelop.Ide.ItemProperties.XOnboarding.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.0c4c08c7de84030a1f2e03ace0d62b401486261d" />
+  <MonoDevelop.Ide.ItemProperties.XOnboarding.iOS.XOnboardingWatch PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CB58892F-CE40-4FC0-AA9C-11E41F8D975D" />
 </Properties>
