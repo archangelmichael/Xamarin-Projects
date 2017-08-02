@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using System;
+using Foundation;
 using UIKit;
 
 namespace XAzureAuth
@@ -9,6 +10,7 @@ namespace XAzureAuth
 	public class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
+		static string AD_AUTH_SCHEME = "azureauth";
 
 		public override UIWindow Window
 		{
@@ -53,6 +55,30 @@ namespace XAzureAuth
 		public override void WillTerminate(UIApplication application)
 		{
 			// Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
+		}
+
+		public override bool OpenUrl(UIApplication application, 
+		                             NSUrl url, 
+		                             string sourceApplication,
+		                             NSObject annotation)
+		{
+			if (url.Scheme == AD_AUTH_SCHEME)
+			{
+				var urlQuery = url.Query;
+				if (string.IsNullOrEmpty(urlQuery))
+				{
+					Console.WriteLine("AD AUTH REDIRECT QUERY : {0}", urlQuery);
+					return true;
+				}
+				else
+				{
+					var query = Uri.UnescapeDataString(url.Query);
+					Console.WriteLine("AD AUTH REDIRECT QUERY : {0}", query);
+					return true;
+				}
+			}
+
+			return false;
 		}
 	}
 }
