@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Foundation;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using UIKit;
 
@@ -32,6 +33,12 @@ namespace XAzureAuth
 			{
 				return null;
 			}
+		}
+
+		public static void LogoutAsync(string authority)
+		{
+			var authContext = new AuthenticationContext(authority);
+			authContext.TokenCache.Clear();
 		}
 	}
 }

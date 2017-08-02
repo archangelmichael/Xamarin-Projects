@@ -16,10 +16,6 @@ namespace XAzureAuth
 		const string ReturnUriStr = "http://UConnectApp/";
 		const string AuthorityFormat = "https://login.windows.net/{0}";
 		const string CommonAuthority = "https://login.windows.net/common";
-
-		const string TestTenant = "emanueldejanu.onmicrosoft.com";
-		const string TestAppId = "625ce3e5-a75e-48cc-b199-1d368329af58";
-
 		const string Tenant = "UCB.onmicrosoft.com";
 		const string AppId = "a107980b-41ff-4438-8b71-c86e03e7cd6d";
 
@@ -46,15 +42,10 @@ namespace XAzureAuth
 			});
 		}
 
-
 		void OnTestAuth()
 		{
-			Task.Run(async () =>
-			{
-				var authority = string.Format(AuthorityFormat, TestTenant);
-				var authResult = await ADAuth.Authenticate(authority, GraphResourseUri, TestAppId, ReturnUriStr, this);
-				InvokeOnMainThread(() => { PrintToken(authResult); });
-			});
+			var auth = string.Format(AuthorityFormat, Tenant);
+			ADAuth.LogoutAsync(auth);
 		}
 
 		async Task<string> GetAzureADProfile(string tenant, AuthenticationResult authResult)
@@ -91,19 +82,6 @@ namespace XAzureAuth
 			}
 		}
 
-		//	//if (!string.IsNullOrEmpty(token))
-		//	//{
-		//	//	//var client = new HttpClient();
-		//	//	//client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AuthenticationHelper.Token);
-		//	//	//var queryString = HttpUtility.ParseQueryString(string.Empty);
-		//	//	//queryString["api-version"] = "1.6";
-		//	//	//string segmentPath = string.IsNullOrEmpty(segment) ? string.Empty : $"/{segment}";
-		//	//	//var uri = $"https://graph.windows.net/me{segmentPath}?" + queryString;
-		//	//	//var response = client.GetAsync(uri).Result;
-		//	//	//return response.Content;
-		//	//}
-
-
 		void AddAuthButtons()
 		{
 			var btnHeight = 60;
@@ -121,7 +99,7 @@ namespace XAzureAuth
 			var buttonTestOpenAuth = new UIButton(UIButtonType.Custom);
 			buttonTestOpenAuth.Frame = new CGRect(center, size);
 			buttonTestOpenAuth.Center = new CGPoint(center.X, center.Y + btnHeight + 10);
-			buttonTestOpenAuth.SetTitle("Test Authenticate", UIControlState.Normal);
+			buttonTestOpenAuth.SetTitle("Logout", UIControlState.Normal);
 			buttonTestOpenAuth.SetTitleColor(UIColor.White, UIControlState.Normal);
 			buttonTestOpenAuth.BackgroundColor = UIColor.Cyan;
 			buttonTestOpenAuth.TouchUpInside += (sender, e) => { OnTestAuth(); };
