@@ -3,22 +3,25 @@ using System.Threading.Tasks;
 using CoreGraphics;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using UIKit;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace XAzureAuth
 {
 	public partial class ViewController : UIViewController
 	{
-		////Client ID from from step 1. point 6
-		//public static string clientId = "25927d3c-.....-63f2304b90de";
-		//public static string commonAuthority = "https://login.windows.net/common";
-		////Redirect URI from step 1. point 5<br />
-		//public static Uri returnUri = new Uri("azureauth://");
-		////Graph URI if you've given permission to Azure Active Directory in step 1. point 6
-		//const string graphResourceUri = "https://graph.windows.net";
-		//public static string graphApiVersion = "2013-11-08";
-		////AuthenticationResult will hold the result after authentication completes
-		//AuthenticationResult authResult = null;
-		// https://management.core.windows.net/
+		const string GraphResourseUri = "https://graph.windows.net";
+		const string ManagementResourseUri = "https://management.core.windows.net";
+		const string ReturnUriStr = "http://UConnectApp/";
+		const string AuthorityFormat = "https://login.windows.net/{0}";
+		const string CommonAuthority = "https://login.windows.net/common";
+
+		const string TestTenant = "emanueldejanu.onmicrosoft.com";
+		const string TestAppId = "625ce3e5-a75e-48cc-b199-1d368329af58";
+
+		const string Tenant = "UCB.onmicrosoft.com";
+		const string AppId = "a107980b-41ff-4438-8b71-c86e03e7cd6d";
 
 		protected ViewController(IntPtr handle) : base(handle)
 		{
@@ -35,8 +38,11 @@ namespace XAzureAuth
 		{
 			Task.Run(async () =>
 			{
-				var tokenResult = await GetAuthToken();
-				InvokeOnMainThread(() => { PrintToken(tokenResult); });
+				var authority = string.Format(AuthorityFormat, Tenant);
+				var authResult = await ADAuth.Authenticate(authority, GraphResourseUri, AppId, ReturnUriStr, this);
+				InvokeOnMainThread(() => { PrintToken(authResult); });
+				var users = await GetAzureADProfile(Tenant, authResult);
+				InvokeOnMainThread(() => { Console.WriteLine(users); });
 			});
 		}
 
@@ -45,47 +51,32 @@ namespace XAzureAuth
 		{
 			Task.Run(async () =>
 			{
-				var tokenResult = await GetTestAuthToken();
-				InvokeOnMainThread(() => { PrintToken(tokenResult); });
+				var authority = string.Format(AuthorityFormat, TestTenant);
+				var authResult = await ADAuth.Authenticate(authority, GraphResourseUri, TestAppId, ReturnUriStr, this);
+				InvokeOnMainThread(() => { PrintToken(authResult); });
 			});
 		}
 
-		async Task<AuthenticationResult> GetTestAuthToken()
+		async Task<string> GetAzureADProfile(string tenant, AuthenticationResult authResult)
 		{
-			Console.WriteLine("TEST AD AUTH");
-			var redirectUri = new Uri("http://UConnectApp/");
-			var appID = "625ce3e5-a75e-48cc-b199-1d368329af58"; // clientID
-			var tenant = "emanueldejanu.onmicrosoft.com";
-			var authority = string.Format("https://login.windows.net/{0}", tenant);
-			var graphResourseUri = "https://graph.windows.net";
-
-			var authContext = new AuthenticationContext(authority);
-			//if (authContext.TokenCache.ReadItems().Count() > 0)
-			//{
-			//	authContext = new AuthenticationContext(authContext.TokenCache.ReadItems().First().Authority);
-			//}
-
-			var result = await authContext.AcquireTokenAsync(graphResourseUri, appID, redirectUri, new PlatformParameters(this));
-			return result;
+			var getUsersUrlStr = string.Format("https://graph.windows.net/{0}/me?api-version=1.6", tenant);
+			var client = new HttpClient();
+			var request = new HttpRequestMessage(HttpMethod.Get, getUsersUrlStr);
+			request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+			var response = await client.SendAsync(request);
+			var content = await response.Content.ReadAsStringAsync();
+			return content;
 		}
 
-		async Task<AuthenticationResult> GetAuthToken()
+		async Task<string> GetAzureADUsers(string tenant, AuthenticationResult authResult)
 		{
-			Console.WriteLine("AD AUTH");
-			var redirectUri = new Uri("http://UConnectApp/");
-			var appID = "a107980b-41ff-4438-8b71-c86e03e7cd6d"; // clientID
-			var tenant = "UCB.onmicrosoft.com";
-			var authority = string.Format("https://login.windows.net/{0}", tenant);
-			var graphResourseUri = "https://graph.windows.net";
-
-			var authContext = new AuthenticationContext(authority);
-			//if (authContext.TokenCache.ReadItems().Count() > 0)
-			//{
-			//	authContext = new AuthenticationContext(authContext.TokenCache.ReadItems().First().Authority);
-			//}
-    
-			var result = await authContext.AcquireTokenAsync(graphResourseUri, appID, redirectUri, new PlatformParameters(this));
-			return result;
+			var getUsersUrlStr = string.Format("https://graph.windows.net/{0}/users?api-version=1.6", tenant);
+			var client = new HttpClient();
+			var request = new HttpRequestMessage(HttpMethod.Get, getUsersUrlStr);
+			request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+			var response = await client.SendAsync(request);
+			var content = await response.Content.ReadAsStringAsync();
+			return content;
 		}
 
 		void PrintToken(AuthenticationResult authResult)
@@ -100,27 +91,6 @@ namespace XAzureAuth
 			}
 		}
 
-		//async void TestAuth()
-		//{
-		//	var resourseUcbTenant = "https://login.windows.net/UCB.onmicrosoft.com";
-
-
-		//	var redirectUri = new Uri("http://UConnectApp/");
-		//	var appID = "625ce3e5-a75e-48cc-b199-1d368329af58"; // clientID
-		//	var resourseTestTenant = "https://login.windows.net/emanueldejanu.onmicrosoft.com";
-		//	var graphID = "https://graph.windows.net";
-
-		//	var context = new AuthenticationContext(resourseTestTenant);
-		//	var result = await context.AcquireTokenAsync(graphID,
-		//												 appID,
-		//												 redirectUri,
-		//												 new PlatformParameters(this));
-		//	Console.WriteLine("Result : {0}", result.AccessToken);
-		//	InvokeOnMainThread(() => {
-		//		var token = result.AccessToken;
-		//		int a = 5;
-		//	});
-
 		//	//if (!string.IsNullOrEmpty(token))
 		//	//{
 		//	//	//var client = new HttpClient();
@@ -132,14 +102,6 @@ namespace XAzureAuth
 		//	//	//var response = client.GetAsync(uri).Result;
 		//	//	//return response.Content;
 		//	//}
-
-
-		//}
-		// http://ParkingApp/
-		//<add key = "ida:Tenant" value="UCB.onmicrosoft.com" />
-		//  <add key = "ida:TenantId" value="237582ad-3eab-4d44-8688-06ca9f2e613b" />
-		//  <add key = "ida:AADInstance" value="https://login.windows.net/" /> 
-
 
 
 		void AddAuthButtons()

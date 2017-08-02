@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{27089903-1E1F-4825-B8C3-0414499ECC7D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="XAzureAuth/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XAzureAuth/ViewController.cs">
     <Files>
-      <File FileName="XAzureAuth/ViewController.cs" Line="149" Column="1" />
-      <File FileName="XAzureAuth/Main.cs" Line="12" Column="1" />
+      <File FileName="XAzureAuth/ADAuth.cs" Line="23" Column="33" />
+      <File FileName="XAzureAuth/ViewController.cs" Line="102" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/radi/repositories/Xamarin-Projects/XAzureAuth/XAzureAuth/ViewController.cs" relfile="XAzureAuth/ViewController.cs" line="149" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.XAzureAuth PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d93ef6daa7225b5b6e0a440c5c45a030259814b4" />

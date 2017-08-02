@@ -6,20 +6,22 @@ using UIKit;
 
 namespace XAzureAuth
 {
-	public class ADAuth
+	public static class ADAuth
 	{
 		public static async Task<AuthenticationResult> Authenticate(string authority, 
 		                                                            string resource, 
 		                                                            string clientId,
-		                                                            string returnUri)
+		                                                            string returnUri,
+		                                                            UIViewController vc)
 		{
 			var authContext = new AuthenticationContext(authority);
-			if (authContext.TokenCache.ReadItems().Any())
-				authContext = new AuthenticationContext(authContext.TokenCache.ReadItems().First().Authority);
+			//if (authContext.TokenCache.ReadItems().Any())
+			//{
+			//	authContext = new AuthenticationContext(authContext.TokenCache.ReadItems().First().Authority);
+			//}
 
-			var controller = UIApplication.SharedApplication.KeyWindow.RootViewController;
 			var uri = new Uri(returnUri);
-			var platformParams = new PlatformParameters(controller);
+			var platformParams = new PlatformParameters(vc);
 
 			try
 			{
