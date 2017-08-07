@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{FD2AA64A-4443-4818-9F68-D573675AF3F5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XMyCalendar/Calendar/CalendarView.xib">
+    <Files>
+      <File FileName="XMyCalendar/ViewController.cs" Line="22" Column="4" />
+      <File FileName="XMyCalendar/Calendar/CalendarView.xib" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="XMyCalendar" expanded="True">
+            <Node name="XMyCalendar" expanded="True">
+              <Node name="Calendar" expanded="True">
+                <Node name="CalendarView.xib" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.XMyCalendar PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B400713B-EAED-47DE-B6CA-3EF0B2F29C4D" />
+</Properties>

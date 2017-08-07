@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace XCalendar
+namespace XMyCalendar
 {
 	public class Application
 	{
