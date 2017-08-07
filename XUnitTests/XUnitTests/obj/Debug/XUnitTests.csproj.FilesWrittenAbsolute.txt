@@ -1,0 +1,5 @@
+/Users/radi/repositories/Xamarin-Projects/XUnitTests/XUnitTests/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile111.AssemblyAttribute.cs
+/Users/radi/repositories/Xamarin-Projects/XUnitTests/XUnitTests/bin/Debug/XUnitTests.pdb
+/Users/radi/repositories/Xamarin-Projects/XUnitTests/XUnitTests/bin/Debug/XUnitTests.dll
+/Users/radi/repositories/Xamarin-Projects/XUnitTests/XUnitTests/obj/Debug/XUnitTests.dll
+/Users/radi/repositories/Xamarin-Projects/XUnitTests/XUnitTests/obj/Debug/XUnitTests.pdb

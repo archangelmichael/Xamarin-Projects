@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{6A34CD78-DE19-4BAC-AF9B-08406D9C97E7}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/MyTest.cs">
+    <Files>
+      <File FileName="Tests/UnitTestAppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Tests/Info.plist" />
+      <File FileName="Tests/MyTest.cs" Line="13" Column="12" />
+      <File FileName="Tests/MyTest2.cs" Line="1" Column="1" />
+      <File FileName="XUnitTests/MyClass.cs" Line="12" Column="21" />
+      <File FileName="iOS/EmptyClass.cs" Line="7" Column="21" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.XUnitTests.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B400713B-EAED-47DE-B6CA-3EF0B2F29C4D" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
