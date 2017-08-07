@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{FD2AA64A-4443-4818-9F68-D573675AF3F5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="XMyCalendar/Calendar/CalendarView.xib">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XMyCalendar/Calendar/CalendarView.cs">
     <Files>
       <File FileName="XMyCalendar/ViewController.cs" Line="22" Column="4" />
       <File FileName="XMyCalendar/Calendar/CalendarView.xib" />
+      <File FileName="XMyCalendar/Calendar/CalendarView.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +11,7 @@
           <Node name="XMyCalendar" expanded="True">
             <Node name="XMyCalendar" expanded="True">
               <Node name="Calendar" expanded="True">
-                <Node name="CalendarView.xib" selected="True" />
+                <Node name="CalendarView.cs" selected="True" />
               </Node>
             </Node>
           </Node>
