@@ -1,16 +1,21 @@
-using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
-using System.Globalization;
 
 namespace XMyCalendar
 {
 	public partial class CalendarView : UIView
 	{
+		public ICalendarDelegate Delegate;
+
 		UIEdgeInsets sectionInsets = new UIEdgeInsets(5, 5, 5, 5);
+
 		DateTime currentDate;
+		int maxAllowedDatesSelected = 1;
 		List<CalendarItem> items = new List<CalendarItem>();
+
+		UIColor todayDateColor = UIColor.DarkGray;
+		UIColor selectedDateColor = UIColor.Blue;
 
 		public CalendarView(IntPtr handle) : base(handle)
 		{
@@ -24,116 +29,83 @@ namespace XMyCalendar
 			cvDays.RegisterNibForCell(CalendarCollectionViewCell.Nib, CalendarCollectionViewCell.Key);
 		}
 
-		public void OpenAtDate(DateTime date)
+		public void SetAppearance(UIColor titleColor,
+		                          UIColor buttonColor,
+		                          UIColor weekdayColor,
+		                          UIColor todayColor,
+		                          UIColor selectedColor)
+		{
+			lblMonth.TextColor = titleColor;
+			lblMonday.TextColor = lblTuesday.TextColor = 
+				lblWednesday.TextColor = lblThursday.TextColor =
+					lblFriday.TextColor = lblSaturday.TextColor = lblSunday.TextColor = weekdayColor;
+			btnNext.TintColor = btnPrev.TintColor = buttonColor;
+			btnNext.SetTitleColor(buttonColor, UIControlState.Normal);
+			btnPrev.SetTitleColor(buttonColor, UIControlState.Normal);
+			todayDateColor = todayColor;
+			selectedDateColor = selectedColor;
+		}
+
+		public void CreateFromDate(DateTime date)
 		{
 			currentDate = date;
-			var monthName = GetMonthName(date);
+			var monthName = CalendarUtils.GetMonthName(date);
 			lblMonth.Text = monthName;
-			var daysInMonth = GetDaysInMonth(date);
-			var startDay = GetFirstDayOfMonthAsWeekDay(date);
-
-			Console.WriteLine("Month name : {0}", monthName);
-			Console.WriteLine("Days in month : {0}", daysInMonth);
-			Console.WriteLine("Start day : {0}", startDay);
+			var numberOfDays = CalendarUtils.GetDaysInMonth(date);
+			var startDay = CalendarUtils.GetFirstDayOfMonthAsWeekDay(date);
+			ReloadCalendarData(startDay, numberOfDays);
 		}
 
-		string GetMonthName(DateTime date)
+		void ReloadCalendarData(int startDay, int numberOfDays)
 		{
-			return date.ToString("Y", CultureInfo.InvariantCulture);
+			var calendarEvents = Delegate != null ? Delegate.GetEventsForDate(currentDate) : new List<CalendarEvent>();
+			var calendarItems = new List<CalendarItem>();
+			var ghostDays = startDay - 1;
+			for (int index = 0; index < ghostDays; index++) // Add ghost days from previous month
+			{
+				calendarItems.Add(new CalendarItem(null));
+			}
+
+			for (int currentDay = 1; currentDay <= numberOfDays; currentDay++) // Add days for current month
+			{
+				var day = new DateTime(currentDate.Year, currentDate.Month, currentDay);
+				var calendarItem = GetCalendarItem(calendarEvents, day);
+				calendarItems.Add(calendarItem);
+			}
+
+			Console.WriteLine(calendarItems);
+			items = calendarItems;
+			ReloadCalendar();
 		}
 
-		int GetDaysInMonth(DateTime date)
+		CalendarItem GetCalendarItem(List<CalendarEvent> calendarEvents, DateTime day)
 		{
-			var month = date.Month;
-			var year = date.Year;
-			return DateTime.DaysInMonth(year, month);
+			foreach (var calendarEvent in calendarEvents)
+			{
+				if (calendarEvent.IsDateIncluded(day))
+				{
+					return new CalendarItem(day, true);
+				}
+			}
+
+			return new CalendarItem(day);
 		}
 
-		int GetFirstDayOfMonthAsWeekDay(DateTime date)
-		{
-			var month = date.Month;
-			var year = date.Year;
-			var firstDay = new DateTime(year, month, 1);
-			return ((int)firstDay.DayOfWeek == 0) ? 7 : (int)firstDay.DayOfWeek;
-		}
-
-		void SetItems()
+		void ReloadCalendar()
 		{
 			cvDays.DataSource = new CalendarCollectionViewDataSource(items);
-			cvDays.Delegate = new CalendarCollectionViewDelegate();
+			cvDays.Delegate = new CalendarCollectionViewDelegate(items, Delegate);
+			cvDays.ReloadData();
 		}
-
-		List<CalendarItem> GetItemsForDate(DateTime date)
-		{
-			return new List<CalendarItem>
-			{ 
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true },
-				new CalendarItem { Date = new DateTime(), Free = false },
-				new CalendarItem { Date = new DateTime(), Free = true }
-			};
-		}
-
 
 		public void GoToNextMonth()
 		{
-			OpenAtDate(currentDate.AddMonths(1));
+			CreateFromDate(currentDate.AddMonths(1));
 		}
 
 		public void GoToPrevMonth()
 		{
-            OpenAtDate(currentDate.AddMonths(-1));
-		}
-
-		class CalendarItem
-		{
-			public DateTime Date;
-			public bool Free;
-
-			public string GetDay()
-			{
-				return Date.Day.ToString();
-			}
-		}
-
-		class CalendarCollectionViewDataSource : UICollectionViewDataSource
-		{
-			List<CalendarItem> collectionItems;
-
-			public CalendarCollectionViewDataSource(List<CalendarItem> items)
-			{
-				collectionItems = items;
-			}
-
-			public override nint GetItemsCount(UICollectionView collectionView, nint section)
-			{
-				return collectionItems.Count;
-			}
-
-			public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
-			{
-				var cell = (CalendarCollectionViewCell)collectionView.DequeueReusableCell(CalendarCollectionViewCell.Key, indexPath);
-				return cell;
-			}
-		}
-
-		class CalendarCollectionViewDelegate : UICollectionViewDelegate
-		{
-			
+            CreateFromDate(currentDate.AddMonths(-1));
 		}
 
 		class CalendarCollectionViewFlowLayout : UICollectionViewFlowLayout

@@ -19,6 +19,28 @@ namespace XMyCalendar
 		{
 			base.AwakeFromNib();
 
+			lblDay.Text = "";
+			lblDay.ClipsToBounds = true;
+			vMark.BackgroundColor = UIColor.Clear;
+			vMark.Layer.CornerRadius = vMark.Bounds.Width / 2;
+			vMark.ClipsToBounds = true;
+		}
+
+		public void SetupAsGhost()
+		{
+			lblDay.Text = "";
+			lblDay.Hidden = true;
+			vMark.BackgroundColor = UIColor.Clear;
+		}
+
+		public void SetupWithItem(CalendarItem item, UIColor textColor, UIColor backgroundColor)
+		{
+			lblDay.Text = item.GetDay();
+			lblDay.Layer.CornerRadius = lblDay.Bounds.Width / 2;
+			lblDay.TextColor = textColor;
+			lblDay.BackgroundColor = backgroundColor;
+			lblDay.Hidden = false;
+			vMark.BackgroundColor = item.Marked ? UIColor.DarkGray : UIColor.Clear;
 		}
 	}
 }

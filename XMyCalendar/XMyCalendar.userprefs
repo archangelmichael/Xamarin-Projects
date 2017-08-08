@@ -1,16 +1,20 @@
 ﻿<Properties StartupConfiguration="{FD2AA64A-4443-4818-9F68-D573675AF3F5}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="XMyCalendar/ViewController.cs">
     <Files>
-      <File FileName="XMyCalendar/ViewController.cs" Line="27" Column="13" />
-      <File FileName="XMyCalendar/Calendar/CalendarView.cs" Line="47" Column="60" />
-      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewCell.cs" Line="20" Column="24" />
+      <File FileName="XMyCalendar/ViewController.cs" Line="50" Column="66" />
+      <File FileName="XMyCalendar/Calendar/CalendarView.cs" Line="63" Column="33" />
+      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewDataSource.cs" Line="13" Column="50" />
+      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewDelegate.cs" Line="49" Column="5" />
+      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewCell.cs" Line="42" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="XMyCalendar/Calendar/CalendarView.cs" line="123" offsetX="460" offsetY="1830" expression="day" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.XMyCalendar PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B400713B-EAED-47DE-B6CA-3EF0B2F29C4D" />
 </Properties>

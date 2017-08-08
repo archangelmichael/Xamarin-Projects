@@ -116,6 +116,12 @@
     <Compile Include="Calendar\CalendarCollectionViewCell.designer.cs">
       <DependentUpon>CalendarCollectionViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calendar\CalendarEvent.cs" />
+    <Compile Include="Calendar\CalendarItem.cs" />
+    <Compile Include="Calendar\ICalendarDelegate.cs" />
+    <Compile Include="Calendar\CalendarCollectionViewDataSource.cs" />
+    <Compile Include="Calendar\CalendarCollectionViewDelegate.cs" />
+    <Compile Include="Calendar\CalendarUtils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
