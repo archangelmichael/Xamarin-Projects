@@ -106,9 +106,9 @@ namespace XMyCalendar
             CreateFromDate(currentDate.AddMonths(-1));
 		}
 
-		class CalendarCollectionViewFlowLayout : UICollectionViewFlowLayout
+		public void ReloadView()
 		{
-			
+			cvDays.CollectionViewLayout.InvalidateLayout();
 		}
     }
 }

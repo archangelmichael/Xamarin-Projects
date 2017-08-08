@@ -7,6 +7,8 @@ namespace XMyCalendar
 {
 	public partial class ViewController : UIViewController, ICalendarDelegate
 	{
+		CalendarView calendar;
+
 		protected ViewController(IntPtr handle) : base(handle) { }
 		public override void ViewDidLoad()
 		{
@@ -22,7 +24,7 @@ namespace XMyCalendar
 		void ShowCalendar()
 		{
 			var nibs = NSBundle.MainBundle.LoadNib("CalendarView", this, null);
-			var calendar = nibs.GetItem<CalendarView>(0);
+			calendar = nibs.GetItem<CalendarView>(0);
 			calendar.Frame = new CoreGraphics.CGRect(0, 20, View.Bounds.Width, 400);
 			calendar.Delegate = this;
 			calendar.CreateFromDate(DateTime.Now);
@@ -49,6 +51,12 @@ namespace XMyCalendar
 		{
 			if (date == null) {  Console.WriteLine("Invalid date selected."); return; }
 			Console.WriteLine("Selected date : {0}", date.Value.ToString("yy-MMM-dd ddd"));
+		}
+
+		public override void ViewWillTransitionToSize(CoreGraphics.CGSize toSize, IUIViewControllerTransitionCoordinator coordinator)
+		{
+			base.ViewWillTransitionToSize(toSize, coordinator);
+			if (calendar != null) { calendar.ReloadView(); } 
 		}
 	}
 }
