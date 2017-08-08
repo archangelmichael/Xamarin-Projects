@@ -21,9 +21,13 @@ namespace XMyCalendar
 		void ShowCalendar()
 		{
 			var nibs = NSBundle.MainBundle.LoadNib("CalendarView", this, null);
+			Console.WriteLine("Load nib");
 			var calendar = nibs.GetItem<CalendarView>(0);
 			calendar.Frame = new CoreGraphics.CGRect(0, 20, View.Bounds.Width, View.Bounds.Height);
+			Console.WriteLine("Set frame");
 			View.AddSubview(calendar);
+			Console.WriteLine("Add Subview");
+			calendar.OpenAtDate(DateTime.Now);
 		}
 	}
 }
