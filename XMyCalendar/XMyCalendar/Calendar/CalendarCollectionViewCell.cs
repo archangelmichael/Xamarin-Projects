@@ -20,6 +20,7 @@ namespace XMyCalendar
 			base.AwakeFromNib();
 
 			lblDay.Text = "";
+			lblDay.Layer.CornerRadius = 5.0f;
 			lblDay.ClipsToBounds = true;
 			vMark.BackgroundColor = UIColor.Clear;
 			vMark.Layer.CornerRadius = vMark.Bounds.Width / 2;
@@ -36,7 +37,6 @@ namespace XMyCalendar
 		public void SetupWithItem(CalendarItem item, UIColor textColor, UIColor backgroundColor)
 		{
 			lblDay.Text = item.GetDay();
-			lblDay.Layer.CornerRadius = lblDay.Bounds.Width / 2;
 			lblDay.TextColor = textColor;
 			lblDay.BackgroundColor = backgroundColor;
 			lblDay.Hidden = false;

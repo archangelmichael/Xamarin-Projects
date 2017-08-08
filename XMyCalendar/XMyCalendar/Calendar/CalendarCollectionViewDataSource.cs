@@ -24,6 +24,11 @@ namespace XMyCalendar
 			activeDayColor = activeDay;
 		}
 
+		public override nint NumberOfSections(UICollectionView collectionView)
+		{
+			return 1;
+		}
+
 		public override nint GetItemsCount(UICollectionView collectionView, nint section)
 		{
 			return collectionItems.Count;

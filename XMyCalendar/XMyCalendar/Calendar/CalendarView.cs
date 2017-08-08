@@ -8,8 +8,6 @@ namespace XMyCalendar
 	{
 		public ICalendarDelegate Delegate;
 
-		UIEdgeInsets sectionInsets = new UIEdgeInsets(5, 5, 5, 5);
-
 		DateTime currentDate;
 		int maxAllowedDatesSelected = 1;
 		List<CalendarItem> items = new List<CalendarItem>();
@@ -93,8 +91,8 @@ namespace XMyCalendar
 
 		void ReloadCalendar()
 		{
+			cvDays.Delegate = new CalendarCollectionViewDelegateFlowLayout(items, Delegate, cvDays);
 			cvDays.DataSource = new CalendarCollectionViewDataSource(items);
-			cvDays.Delegate = new CalendarCollectionViewDelegate(items, Delegate);
 			cvDays.ReloadData();
 		}
 

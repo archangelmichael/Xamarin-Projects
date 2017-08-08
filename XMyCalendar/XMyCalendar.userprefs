@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{FD2AA64A-4443-4818-9F68-D573675AF3F5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="XMyCalendar/ViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XMyCalendar/Calendar/CalendarCollectionViewDelegateFlowLayout.cs">
     <Files>
-      <File FileName="XMyCalendar/ViewController.cs" Line="50" Column="66" />
-      <File FileName="XMyCalendar/Calendar/CalendarView.cs" Line="63" Column="33" />
-      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewDataSource.cs" Line="13" Column="50" />
-      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewDelegate.cs" Line="49" Column="5" />
-      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewCell.cs" Line="42" Column="25" />
+      <File FileName="XMyCalendar/ViewController.cs" Line="48" Column="43" />
+      <File FileName="XMyCalendar/Calendar/CalendarView.cs" Line="95" Column="68" />
+      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewDataSource.cs" Line="58" Column="27" />
+      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewDelegateFlowLayout.cs" Line="14" Column="3" />
+      <File FileName="XMyCalendar/Calendar/CalendarCollectionViewCell.cs" Line="46" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
