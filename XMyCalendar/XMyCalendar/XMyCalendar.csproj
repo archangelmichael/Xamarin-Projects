@@ -120,7 +120,6 @@
     <Compile Include="Calendar\CalendarItem.cs" />
     <Compile Include="Calendar\ICalendarDelegate.cs" />
     <Compile Include="Calendar\CalendarCollectionViewDataSource.cs" />
-    <Compile Include="Calendar\CalendarCollectionViewDelegate.cs" />
     <Compile Include="Calendar\CalendarUtils.cs" />
     <Compile Include="Calendar\CalendarCollectionViewDelegateFlowLayout.cs" />
   </ItemGroup>

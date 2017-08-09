@@ -27,6 +27,8 @@ namespace XMyCalendar
 			vMark.ClipsToBounds = true;
 		}
 
+
+
 		public void SetupAsGhost()
 		{
 			lblDay.Text = "";

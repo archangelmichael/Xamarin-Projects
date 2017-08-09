@@ -8,9 +8,10 @@ namespace XMyCalendar
 {
 	public class CalendarCollectionViewDelegateFlowLayout : UICollectionViewDelegateFlowLayout
 	{
-		readonly UIEdgeInsets sectionInsets = new UIEdgeInsets(5, 5, 5, 5);
+		readonly UIEdgeInsets sectionInsets = new UIEdgeInsets(0, 0, 0, 0);
 		readonly UIView view;
 		const int DAYS_PER_WEEK = 7;
+		const int SIZE_FIX = 2;
 
 		readonly List<CalendarItem> collectionItems;
 		readonly ICalendarDelegate dateHandler;
@@ -63,9 +64,7 @@ namespace XMyCalendar
 											  UICollectionViewLayout layout,
 											  NSIndexPath indexPath)
 		{
-			var paddingSpace = sectionInsets.Left * (DAYS_PER_WEEK + 1);
-			var availableWidth = view.Bounds.Width - paddingSpace;
-			var itemSize = availableWidth / DAYS_PER_WEEK - 5;
+			var itemSize = (view.Bounds.Width - SIZE_FIX * (DAYS_PER_WEEK + 1)) / DAYS_PER_WEEK;
 			return new CGSize(itemSize, itemSize);
 		}
 
@@ -80,7 +79,12 @@ namespace XMyCalendar
 															   UICollectionViewLayout layout,
 															   nint section)
 		{
-			return sectionInsets.Left;
+			return 0.0f;
+		}
+
+		public override nfloat GetMinimumInteritemSpacingForSection(UICollectionView collectionView, UICollectionViewLayout layout, nint section)
+		{
+			return 0.0f;
 		}
 	}
 }
