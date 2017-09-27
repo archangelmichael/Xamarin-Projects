@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="199">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="198">
+            <objects>
+                <viewController id="199" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="196"/>
+                        <viewControllerLayoutGuide type="bottom" id="197"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="200">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EuO-ka-dyq" misplaced="YES">
+                                <rect key="frame" x="20" y="259.5" width="335" height="148"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG1-kV-TG6" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7u-MQ-tUC" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="56" width="335" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="CONNECT"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2Z-ei-4Nu" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="112" width="335" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SEND MAIL"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EuO-ka-dyq" secondAttribute="trailing" constant="20" id="4eU-Dn-4bk"/>
+                            <constraint firstItem="EuO-ka-dyq" firstAttribute="centerX" secondItem="200" secondAttribute="centerX" id="7AJ-ve-of8"/>
+                            <constraint firstItem="EuO-ka-dyq" firstAttribute="centerY" secondItem="200" secondAttribute="centerY" id="dDV-gs-z9V"/>
+                            <constraint firstItem="EuO-ka-dyq" firstAttribute="leading" secondItem="200" secondAttribute="leading" constant="20" id="hpz-WW-3mU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblInfo" destination="CG1-kV-TG6" id="name-outlet-CG1-kV-TG6"/>
+                        <outlet property="btnConnect" destination="L7u-MQ-tUC" id="name-outlet-L7u-MQ-tUC"/>
+                        <outlet property="btnMail" destination="z2Z-ei-4Nu" id="name-outlet-z2Z-ei-4Nu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="201" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-130.4" y="-52.62369"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="First" width="32" height="30"/>
+        <image name="Second" width="32" height="30"/>
+        <image name="XamarinLogo" width="220" height="51"/>
+    </resources>
+</document>

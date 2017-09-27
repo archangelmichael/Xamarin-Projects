@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{271EB9E6-A6A7-4F43-A85E-027686C04CDF}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
+    <Files>
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="19" Column="47" />
+      <File FileName="iOS/Helpers/Mail.cs" Line="42" Column="51" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MicrosoftGraph" expanded="True">
+            <Node name="MicrosoftGraph" expanded="True" />
+            <Node name="MicrosoftGraph.iOS" expanded="True">
+              <Node name="Designs" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="ViewControllers" expanded="True">
+                <Node name="LoginViewController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MicrosoftGraph.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d93ef6daa7225b5b6e0a440c5c45a030259814b4">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.MicrosoftGraph.iOS>
+</Properties>

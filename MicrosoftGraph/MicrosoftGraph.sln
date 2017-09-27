@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MicrosoftGraph", "MicrosoftGraph\MicrosoftGraph.shproj", "{FB31EB76-DB47-4489-B8B9-B4F0B114A07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftGraph.iOS", "iOS\MicrosoftGraph.iOS.csproj", "{271EB9E6-A6A7-4F43-A85E-027686C04CDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Release|iPhone.ActiveCfg = Release|iPhone
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Release|iPhone.Build.0 = Release|iPhone
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{271EB9E6-A6A7-4F43-A85E-027686C04CDF}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
