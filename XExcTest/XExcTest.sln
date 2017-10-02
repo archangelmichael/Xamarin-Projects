@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XExcTest", "XExcTest\XExcTest.csproj", "{A0BB1131-980B-403F-B256-CD416D1E3385}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Release|iPhone.ActiveCfg = Release|iPhone
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Release|iPhone.Build.0 = Release|iPhone
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{A0BB1131-980B-403F-B256-CD416D1E3385}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
