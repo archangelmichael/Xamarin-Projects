@@ -1,25 +1,11 @@
 ﻿<Properties StartupConfiguration="{271EB9E6-A6A7-4F43-A85E-027686C04CDF}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helpers/Mail.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="19" Column="47" />
-      <File FileName="iOS/Helpers/Mail.cs" Line="42" Column="51" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="95" Column="14" />
+      <File FileName="iOS/Helpers/Mail.cs" Line="23" Column="22" />
+      <File FileName="iOS/AppDelegate.cs" Line="20" Column="9" />
+      <File FileName="iOS/Helpers/Authentication.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="MicrosoftGraph" expanded="True">
-            <Node name="MicrosoftGraph" expanded="True" />
-            <Node name="MicrosoftGraph.iOS" expanded="True">
-              <Node name="Designs" expanded="True" />
-              <Node name="Helpers" expanded="True" />
-              <Node name="ViewControllers" expanded="True">
-                <Node name="LoginViewController.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

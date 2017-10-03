@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{61D6A719-41E8-4C6D-9460-4B4248643662}|Default">
+  <MonoDevelop.Ide.ItemProperties.XImgUpDown PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5A980B5B-F3C4-4C47-BAFF-870956030848">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.XImgUpDown>
+  <MonoDevelop.Ide.Workbench ActiveDocument="XImgUpDown/AppDelegate.cs">
+    <Files>
+      <File FileName="XImgUpDown/AppDelegate.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
