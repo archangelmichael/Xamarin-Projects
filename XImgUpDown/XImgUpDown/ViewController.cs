@@ -25,7 +25,8 @@ namespace XImgUpDown
         private const string file_upload_name = "lyncuploadspeedtest.jpg";
 
         private const string upload_public_key = "UPLOADCARE_PUB_KEY";
-        private const string upload_store = "UPLOADCARE_STORE";
+        private const string upload_store_key = "UPLOADCARE_STORE";
+        private const string upload_store_value = "0"; // 0 - dont store image,  1 - store the image
 
         private const string upload_file_format = "{0}/base/";
         private const string download_file_format = "{0}/files/{1}/";
@@ -131,7 +132,7 @@ namespace XImgUpDown
 				using (MultipartFormDataContent form = new MultipartFormDataContent())
 				{
                     form.Add(new StringContent(public_key), upload_public_key);
-                    form.Add(new StringContent("1"), upload_store);
+                    form.Add(new StringContent(upload_store_value), upload_store_key);
                     form.Add(new ByteArrayContent(imageBytes, 0, imageBytes.Length), "file", file_upload_name);
 
                     startTime = DateTime.Now;
