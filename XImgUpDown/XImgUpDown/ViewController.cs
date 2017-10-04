@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Foundation;
 using Newtonsoft.Json;
@@ -14,11 +17,42 @@ namespace XImgUpDown
 		private const string upload_url = "https://upload.uploadcare.com/";
 		private const string public_key = "f0a5f24b13717e719baa";
 		private const string private_key = "8bbf5aa41bb1b34db513";
+        private const string api_auth_key = "Uploadcare.Simple";
+        private const string file_name = "speedtest1Mb.jpg";
 
-        DateTime startTime;
-        DateTime endTime;
+        private const string file_download_id = "d97c5106-8a2b-4b66-a08d-90d818c9e81c";
+        private const string file_download_name = "lyncdownloadspeedtest.jpg";
+        private const string file_upload_name = "lyncuploadspeedtest.jpg";
 
-        protected ViewController(IntPtr handle) : base(handle) { }
+        private const string upload_public_key = "UPLOADCARE_PUB_KEY";
+        private const string upload_store = "UPLOADCARE_STORE";
+
+        private const string upload_file_format = "{0}/base/";
+        private const string download_file_format = "{0}/files/{1}/";
+
+        DateTime startDownload;
+        DateTime endDownload;
+
+
+		// POST Request
+		private string GetUploadUrl()
+		{
+			return string.Format(upload_file_format, upload_url);
+		}
+
+		// GET or DELETE Request
+		private string GetDownloadUrl(string fileID)
+		{
+			return string.Format(download_file_format, api_url, fileID);
+		}
+
+		private string GetBasicAuthValue()
+		{
+			return string.Format("{0}:{1}", public_key, private_key);
+		}
+
+
+		protected ViewController(IntPtr handle) : base(handle) { }
 
         public override void ViewDidLoad()
         {
@@ -35,24 +69,22 @@ namespace XImgUpDown
         {
 			try
 			{
-				var imgToUpload = UIImage.FromFile("speedtest1Mb.jpg");
+				var imgToUpload = UIImage.FromFile(file_name);
 				using (NSData imgData = imgToUpload.AsPNG())
 				{
 					Byte[] imgByteArray = new Byte[imgData.Length];
+                    var uploadFileSizeInKb = imgByteArray.Length / 1024;
 					System.Runtime.InteropServices.Marshal.Copy(imgData.Bytes, imgByteArray, 0, Convert.ToInt32(imgData.Length));
 
-					var uploadedImage = await UploadImage(imgByteArray);
+                    var uploadedImage = await UploadImage(imgByteArray);
 					if (uploadedImage != null)
 					{
 						Console.WriteLine("Image uploaded");
-                        var diffInSeconds = (endTime - startTime).TotalSeconds;
-                        double kbsec = Math.Round(15.7 * 1024 / diffInSeconds);
+                        double kbsec = Math.Round(uploadFileSizeInKb / uploadedImage.UploadSeconds, 1);
                         Console.WriteLine(kbsec + "kb/sec");
 
-
-
-						// TODO: detect speed
-						// TODO: Download the image
+                        startDownload = DateTime.Now;
+                        OnDownload(uploadedImage.FileId);
 					}
 					else
 					{
@@ -66,57 +98,41 @@ namespace XImgUpDown
 			}
         }
 
-        void OnDownload(string fileID)
-        {
+        static int counter = 0;
 
+        async void OnDownload(string fileID = file_download_id)
+		{
+			try
+            {
+                var downloadImage = await GetImage(fileID);
+                if (downloadImage != null && !downloadImage.IsReady)
+                {
+                    counter += 1;
+                    OnDownload(null);
+                    return;
+                }
 
-
-		//	NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		//	NSString* documentsDirectoryPath = [paths objectAtIndex: 0];
-
-		//	downloadDirectoryPath = [NSString stringWithFormat: @"%@/Downloads/", documentsDirectoryPath];
-
-		//	if (![[NSFileManager defaultManager] fileExistsAtPath: downloadDirectoryPath])
-
-		//[[NSFileManager defaultManager] createDirectoryAtPath:downloadDirectoryPath withIntermediateDirectories:NO attributes:nil error:nil];
-
-
-
+                endDownload = DateTime.Now;
+                Console.WriteLine("Storing image completed in {0}", (endDownload - startDownload).TotalSeconds);
+                var download = await DownloadImage(downloadImage.OriginalFileUrl);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+			}
         }
-
-		// POST Request
-		private string GetUploadUrl()
-		{
-			return string.Format("{0}/base/", upload_url);
-		}
-
-		// GET Request
-		private string GetDownloadUrl(string fileID)
-		{
-			return string.Format("{0}/files/{1}/", api_url, fileID);
-		}
-
-		// DELETE Request
-		private string GetDeleteUrl(string fileID)
-		{
-			return string.Format("{0}/files/{1}/", api_url, fileID);
-		}
 
         public async Task<UploadModel> UploadImage(byte[] imageBytes)
 		{
-			var parameters = new Dictionary<string, string>
-			{
-					{ "UPLOADCARE_PUB_KEY", public_key },
-					{ "UPLOADCARE_STORE", "0" }
-			};
-
+            DateTime startTime;
+            DateTime endTime;
 			using (HttpClient httpClient = new HttpClient())
 			{
 				using (MultipartFormDataContent form = new MultipartFormDataContent())
 				{
-                    form.Add(new StringContent(public_key), "UPLOADCARE_PUB_KEY");
-					form.Add(new StringContent("0"), "UPLOADCARE_STORE");
-					form.Add(new ByteArrayContent(imageBytes, 0, imageBytes.Length), "file", "@lyncspeedtest.jpg");
+                    form.Add(new StringContent(public_key), upload_public_key);
+                    form.Add(new StringContent("1"), upload_store);
+                    form.Add(new ByteArrayContent(imageBytes, 0, imageBytes.Length), "file", file_upload_name);
 
                     startTime = DateTime.Now;
 					var httpResponse = await httpClient.PostAsync(GetUploadUrl(), form);
@@ -125,6 +141,12 @@ namespace XImgUpDown
                         endTime = DateTime.Now;
 						var responseContent = await httpResponse.Content.ReadAsStringAsync();
                         var response = JsonConvert.DeserializeObject<UploadModel>(responseContent);
+                        if (response != null)
+                        {
+							var diffInSeconds = (endTime - startTime).TotalSeconds;
+							response.UploadSeconds = diffInSeconds;
+                        }
+
 						return response;
 					}
 
@@ -133,19 +155,64 @@ namespace XImgUpDown
 			}
 		}
 
-		public void DownloadImage()
-		{
+        public async Task<UploadModel> GetImage(string fileId) 
+        {
+            var fileUrl = GetDownloadUrl(fileId);
+			using (var httpClient = new HttpClient())
+			{
+				httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(api_auth_key, GetBasicAuthValue());
+				var httpResponse = await httpClient.GetAsync(fileUrl);
+				if (httpResponse.Content != null)
+				{
+					var responseContent = await httpResponse.Content.ReadAsStringAsync();
+					var response = JsonConvert.DeserializeObject<UploadModel>(responseContent);
+					return response;
+				}
 
+				throw new Exception("Get test is not possible.");
+			}
+        }
+
+		public async Task<string> DownloadImage(string fileUrl)
+		{
+			DateTime startTime;
+			DateTime endTime;
+
+			using (var httpClient = new HttpClient())
+			{
+				//httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(api_auth_key, GetBasicAuthValue());
+				startTime = DateTime.Now;
+				using (var request = new HttpRequestMessage(HttpMethod.Get, fileUrl))
+				{
+                    var responseContent = await httpClient.SendAsync(request);
+                    endTime = DateTime.Now;
+                    using (var contentStream = await responseContent.Content.ReadAsStreamAsync()) 
+                    {
+                        Console.WriteLine("File downloaded");
+                    }
+				}
+
+				throw new Exception("download test is not possible.");
+			}
 		}
 
-		public void DeleteImage()
+        private void SaveImage(Stream dataStream)
 		{
-
+            var bytesArray = ReadFully(dataStream);
+			string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string localFilename = file_name;
+			string localPath = Path.Combine(documentsPath, localFilename);
+			File.WriteAllBytes(localPath, bytesArray);
 		}
 
-		private string GetBasicAuth()
+		public static byte[] ReadFully(Stream input)
 		{
-			return string.Format("Uploadcare.Simple {0}:{1}", public_key, private_key);
+			using (MemoryStream ms = new MemoryStream())
+			{
+				input.CopyTo(ms);
+				return ms.ToArray();
+			}
 		}
+		
     }
 }
