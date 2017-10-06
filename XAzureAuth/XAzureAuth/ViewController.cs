@@ -2,10 +2,9 @@
 using System.Threading.Tasks;
 using CoreGraphics;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Newtonsoft.Json;
 using UIKit;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
+using XAzureAuth.Authentication;
 
 namespace XAzureAuth
 {
@@ -19,6 +18,13 @@ namespace XAzureAuth
 		const string Tenant = "UCB.onmicrosoft.com";
 		const string AppId = "a107980b-41ff-4438-8b71-c86e03e7cd6d";
 
+        UIButton btnLogin;
+        UIButton btnGetProfile;
+        UIButton btnGetUsers;
+        UIButton btnLogout;
+
+        AuthenticationResult adalAuthenticationResult;
+
 		protected ViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -28,82 +34,119 @@ namespace XAzureAuth
 		{
 			base.ViewDidLoad();
 			AddAuthButtons();
+
+            btnGetProfile.Enabled = false;
+            btnGetUsers.Enabled = false;
 		}
 
-		void OnAuth()
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+            if (ADALAuth.HasExistingAuthentication())
+			{
+				OnLogin();
+			}
+        }
+
+		void OnLogin()
 		{
 			Task.Run(async () =>
 			{
-				var authority = string.Format(AuthorityFormat, Tenant);
-				var authResult = await ADAuth.Authenticate(authority, GraphResourseUri, AppId, ReturnUriStr, this);
-				InvokeOnMainThread(() => { PrintToken(authResult); });
-				var users = await GetAzureADProfile(Tenant, authResult);
-				InvokeOnMainThread(() => { Console.WriteLine(users); });
+                adalAuthenticationResult = await ADALAuth.GetToken(this);
+                if (adalAuthenticationResult != null)
+                {
+                    InvokeOnMainThread(() =>
+                    {
+                        Console.WriteLine("Fetch token complete");
+						btnGetProfile.Enabled = true;
+						btnGetUsers.Enabled = true;
+                    });
+                }
+                else
+                {
+                    Console.WriteLine("ADAL authentication failed");
+                }
 			});
 		}
 
-		void OnTestAuth()
-		{
-			var auth = string.Format(AuthorityFormat, Tenant);
-			ADAuth.LogoutAsync(auth);
-		}
+        async void OnGetProfile() 
+        {
+            var profile = await ADALAuth.GetProfile(adalAuthenticationResult);
+			InvokeOnMainThread(() =>
+            {
+				Console.WriteLine("Fetch profile complete");
+            });
+        }
 
-		async Task<string> GetAzureADProfile(string tenant, AuthenticationResult authResult)
-		{
-			var getUsersUrlStr = string.Format("https://graph.windows.net/{0}/me?api-version=1.6", tenant);
-			var client = new HttpClient();
-			var request = new HttpRequestMessage(HttpMethod.Get, getUsersUrlStr);
-			request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-			var response = await client.SendAsync(request);
-			var content = await response.Content.ReadAsStringAsync();
-			return content;
-		}
+        async void OnGetUsers()
+        {
+            var users = await ADALAuth.GetUsers(adalAuthenticationResult);
+			InvokeOnMainThread(() =>
+            {
+                Console.WriteLine("Fetch users complete");
+            });
+        }
 
-		async Task<string> GetAzureADUsers(string tenant, AuthenticationResult authResult)
+		void OnLogout()
 		{
-			var getUsersUrlStr = string.Format("https://graph.windows.net/{0}/users?api-version=1.6", tenant);
-			var client = new HttpClient();
-			var request = new HttpRequestMessage(HttpMethod.Get, getUsersUrlStr);
-			request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-			var response = await client.SendAsync(request);
-			var content = await response.Content.ReadAsStringAsync();
-			return content;
-		}
-
-		void PrintToken(AuthenticationResult authResult)
-		{
-			if (authResult != null)
-			{
-				Console.WriteLine("AD auth token : {0}", authResult.AccessToken);
-			}
-			else
-			{
-				Console.WriteLine("AD auth failed");
-			}
+            ADALAuth.Logout();
+			btnGetProfile.Enabled = false;
+			btnGetUsers.Enabled = false;
 		}
 
 		void AddAuthButtons()
 		{
 			var btnHeight = 60;
+            var verticalOffset = 10;
 			var center = this.View.Center;
+            center.Y = 60;
 			var size = new CGSize(this.View.Bounds.Width - 40, btnHeight);
-			var buttonOpenAuth = new UIButton(UIButtonType.Custom);
-			buttonOpenAuth.Frame = new CGRect(center, size);
-			buttonOpenAuth.Center = center;
-			buttonOpenAuth.SetTitle("Authenticate", UIControlState.Normal);
-			buttonOpenAuth.SetTitleColor(UIColor.White, UIControlState.Normal);
-			buttonOpenAuth.BackgroundColor = UIColor.Cyan;
-			buttonOpenAuth.TouchUpInside += (sender, e) => { OnAuth(); };
-			this.View.AddSubview(buttonOpenAuth);
+            btnLogin = new UIButton(UIButtonType.Custom)
+            {
+                Frame = new CGRect(center, size),
+                Center = center
+            };
+            btnLogin.SetTitle("Login", UIControlState.Normal);
+            btnLogin.SetTitleColor(UIColor.White, UIControlState.Normal);
+            btnLogin.BackgroundColor = UIColor.Cyan;
+            btnLogin.TouchUpInside += (sender, e) => { OnLogin(); };
+            this.View.AddSubview(btnLogin);
 
-			var buttonTestOpenAuth = new UIButton(UIButtonType.Custom);
-			buttonTestOpenAuth.Frame = new CGRect(center, size);
-			buttonTestOpenAuth.Center = new CGPoint(center.X, center.Y + btnHeight + 10);
-			buttonTestOpenAuth.SetTitle("Logout", UIControlState.Normal);
-			buttonTestOpenAuth.SetTitleColor(UIColor.White, UIControlState.Normal);
-			buttonTestOpenAuth.BackgroundColor = UIColor.Cyan;
-			buttonTestOpenAuth.TouchUpInside += (sender, e) => { OnTestAuth(); };
-			this.View.AddSubview(buttonTestOpenAuth);
+			center.Y += btnHeight + verticalOffset;
+			btnGetProfile = new UIButton(UIButtonType.Custom)
+			{
+				Frame = new CGRect(center, size),
+				Center = center
+			};
+			btnGetProfile.SetTitle("Get Profile", UIControlState.Normal);
+			btnGetProfile.SetTitleColor(UIColor.White, UIControlState.Normal);
+			btnGetProfile.BackgroundColor = UIColor.Cyan;
+			btnGetProfile.TouchUpInside += (sender, e) => { OnGetProfile(); };
+			this.View.AddSubview(btnGetProfile);
+
+			center.Y += btnHeight + verticalOffset;
+			btnGetUsers = new UIButton(UIButtonType.Custom)
+			{
+				Frame = new CGRect(center, size),
+				Center = center
+			};
+			btnGetUsers.SetTitle("Get Users", UIControlState.Normal);
+			btnGetUsers.SetTitleColor(UIColor.White, UIControlState.Normal);
+			btnGetUsers.BackgroundColor = UIColor.Cyan;
+			btnGetUsers.TouchUpInside += (sender, e) => { OnGetUsers(); };
+			this.View.AddSubview(btnGetUsers);
+
+            center.Y += btnHeight + verticalOffset;
+			btnLogout = new UIButton(UIButtonType.Custom)
+			{
+				Frame = new CGRect(center, size),
+                Center = center
+			};
+			btnLogout.SetTitle("Logout", UIControlState.Normal);
+			btnLogout.SetTitleColor(UIColor.White, UIControlState.Normal);
+			btnLogout.BackgroundColor = UIColor.Cyan;
+			btnLogout.TouchUpInside += (sender, e) => { OnLogout(); };
+			this.View.AddSubview(btnLogout);
 		}
 	}
 }

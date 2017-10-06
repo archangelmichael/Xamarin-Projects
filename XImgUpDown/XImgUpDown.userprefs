@@ -2,11 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.XImgUpDown PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5A980B5B-F3C4-4C47-BAFF-870956030848">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.XImgUpDown>
-  <MonoDevelop.Ide.Workbench ActiveDocument="XImgUpDown/ViewController.cs">
-    <Files>
-      <File FileName="XImgUpDown/ViewController.cs" Line="108" Column="68" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
