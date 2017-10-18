@@ -100,6 +100,9 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Authentication\" />
+    <Folder Include="Authentication\ADAL\" />
+    <Folder Include="Authentication\SAML\" />
+    <Folder Include="Authentication\OAuth\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -117,8 +120,11 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Authentication\ADALAuth.cs" />
-    <Compile Include="Authentication\ADALUser.cs" />
+    <Compile Include="Authentication\ADAL\ADALAuth.cs" />
+    <Compile Include="Authentication\ADAL\ADALUser.cs" />
+    <Compile Include="Authentication\OAuth\OAuthCodeHttpHandler.cs" />
+    <Compile Include="Authentication\OAuth\OAuthRequestHttpHandler.cs" />
+    <Compile Include="Authentication\SessionObject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
