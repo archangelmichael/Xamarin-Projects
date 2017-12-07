@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "XMVVMLight", "XMVVMLight\XMVVMLight.shproj", "{D96D413A-7077-422B-8B6D-6B3C65AC883D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMVVMLight.iOS", "iOS\XMVVMLight.iOS.csproj", "{93E36F81-1D81-49CB-9927-51A60A1B2CF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Release|iPhone.ActiveCfg = Release|iPhone
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Release|iPhone.Build.0 = Release|iPhone
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{93E36F81-1D81-49CB-9927-51A60A1B2CF2}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
