@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -115,9 +116,13 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
+    <Compile Include="Controllers\FirstVC.cs" />
+    <Compile Include="Controllers\FirstVC.designer.cs">
+      <DependentUpon>FirstVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SecondVC.cs" />
+    <Compile Include="Controllers\SecondVC.designer.cs">
+      <DependentUpon>SecondVC.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="..\XMVVMLight\XMVVMLight.projitems" Label="Shared" Condition="Exists('..\XMVVMLight\XMVVMLight.projitems')" />

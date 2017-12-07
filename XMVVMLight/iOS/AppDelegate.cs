@@ -1,6 +1,12 @@
 ﻿using Foundation;
 using UIKit;
 
+using GalaSoft.MvvmLight.Ioc;
+ using GalaSoft.MvvmLight.Threading;
+using GalaSoft.MvvmLight.Views;
+
+using XMVVMLight.ViewModel;
+
 namespace XMVVMLight.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the
@@ -20,6 +26,16 @@ namespace XMVVMLight.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
+            // MVVM Light's DispatcherHelper for cross-thread handling.
+            DispatcherHelper.Initialize(application);
+
+            // Configure and register the MVVM Light NavigationService
+            var nav = new NavigationService();
+            SimpleIoc.Default.Register<INavigationService>(() => nav);
+
+            nav.Initialize((UINavigationController)Window.RootViewController);
+            nav.Configure(ViewModelLocator.SecondPageKey, "SecondVC");
 
             return true;
         }
