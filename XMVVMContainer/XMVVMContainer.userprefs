@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.XMVVMContainer.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d93ef6daa7225b5b6e0a440c5c45a030259814b4">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.XMVVMContainer.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
     <Files>
-      <File FileName="iOS/Info.plist" />
+      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
