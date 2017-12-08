@@ -103,6 +103,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Controllers\" />
+    <Folder Include="DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -128,7 +129,7 @@
     <Compile Include="Controllers\TasksVC.designer.cs">
       <DependentUpon>TasksVC.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaskListObservableTableSource.cs" />
+    <Compile Include="DataSources\TaskListObservableTableSource.cs" />
   </ItemGroup>
   <Import Project="..\XMVVMLight\XMVVMLight.projitems" Label="Shared" Condition="Exists('..\XMVVMLight\XMVVMLight.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
