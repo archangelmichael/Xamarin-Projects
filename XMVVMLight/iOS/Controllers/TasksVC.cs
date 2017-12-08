@@ -14,7 +14,9 @@ namespace XMVVMLight.iOS
 
         private MainViewModel Vm => Application.Locator.Main;
 
-        private ObservableTableViewController<TaskModel> tableViewController;
+        // private ObservableTableViewController<TaskModel> tableViewController;
+        private ObservableTableViewSource<TaskModel> source;
+
         public UIBarButtonItem ButtonAddTask { get; private set; }
 
         public override void ViewDidLoad()
@@ -27,9 +29,14 @@ namespace XMVVMLight.iOS
             ButtonAddTask.Clicked += (sender, e) => {};
             ButtonAddTask.SetCommand("Clicked", Vm.AddTaskCommand);
 
-            tableViewController = Vm.TodoTasks
-                                  .GetController(CreateTaskCell, BindTaskCell);
-            tableViewController.TableView = TableTasks;
+
+            source = Vm.TodoTasks.GetTableViewSource(CreateTaskCell,
+                                                     BindTaskCell,
+                                                     factory: () => new TaskListObservableTableSource());
+            TableTasks.Source = source;
+
+            // tableViewController = Vm.TodoTasks.GetController(CreateTaskCell, BindTaskCell);
+            // tableViewController.TableView = TableTasks;
         }
 
         private void BindTaskCell(UITableViewCell cell,

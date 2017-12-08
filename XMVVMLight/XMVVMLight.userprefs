@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{93E36F81-1D81-49CB-9927-51A60A1B2CF2}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/TasksVC.cs">
     <Files>
       <File FileName="XMVVMLight/ViewModel/MainViewModel.cs" Line="24" Column="41" />
-      <File FileName="iOS/Controllers/TasksVC.cs" Line="39" Column="57" />
-      <File FileName="iOS/AppDelegate.cs" Line="38" Column="79" />
+      <File FileName="iOS/Controllers/TasksVC.cs" Line="14" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
