@@ -35,7 +35,8 @@ namespace XMVVMLight.iOS
             SimpleIoc.Default.Register<INavigationService>(() => nav);
 
             nav.Initialize((UINavigationController)Window.RootViewController);
-            nav.Configure(ViewModelLocator.SecondPageKey, "SecondVC");
+            nav.Configure(ViewModelLocator.SecondVCKey, "SecondVC");
+            nav.Configure(ViewModelLocator.TasksVCKey, "TasksVC");
 
             return true;
         }

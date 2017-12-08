@@ -21,7 +21,8 @@ namespace XMVVMLight.ViewModel
     // This class contains static references to all the view models in the
     public class ViewModelLocator
     {
-        public const string SecondPageKey = "SecondVC";
+        public const string SecondVCKey = "SecondVC";
+        public const string TasksVCKey = "TasksVC";
 
         public ViewModelLocator()
         {

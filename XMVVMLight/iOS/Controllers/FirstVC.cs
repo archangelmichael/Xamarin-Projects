@@ -18,19 +18,13 @@ namespace XMVVMLight.iOS
         public FirstVC(IntPtr param) : base(param) { }
         public FirstVC() : base("FirstVC", null) { }
 
-        private MainViewModel Vm
-        {
-            get
-            {
-                return Application.Locator.Main;
-            }
-        }
+        private MainViewModel Vm => Application.Locator.Main;
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             bindings.Add(this.SetBinding(() => Vm.WelcomeTitle, () => LblWelcome.Text));
-            BtnNext.SetCommand("TouchUpInside", Vm.NavigateCommand);
+            BtnNext.SetCommand("TouchUpInside", Vm.ShowNextCommand);
         }
     }
 }

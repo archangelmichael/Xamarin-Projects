@@ -80,24 +80,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTF-jL-WZ2">
-                                <rect key="frame" x="148.5" y="309" width="77" height="48"/>
+                                <rect key="frame" x="148.5" y="365.5" width="77" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="BACK"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn8-a7-R81">
+                                <rect key="frame" x="143" y="309.5" width="90" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="TASKS"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gTF-jL-WZ2" firstAttribute="centerY" secondItem="0Hm-a6-Tjv" secondAttribute="centerY" id="40h-fa-YfC"/>
                             <constraint firstItem="gTF-jL-WZ2" firstAttribute="centerX" secondItem="0Hm-a6-Tjv" secondAttribute="centerX" id="MWq-kZ-tSj"/>
+                            <constraint firstItem="gTF-jL-WZ2" firstAttribute="top" secondItem="Jn8-a7-R81" secondAttribute="bottom" constant="8" id="ZbC-w1-GaD"/>
+                            <constraint firstItem="Jn8-a7-R81" firstAttribute="centerY" secondItem="0Hm-a6-Tjv" secondAttribute="centerY" id="cBX-DO-o10"/>
+                            <constraint firstItem="Jn8-a7-R81" firstAttribute="centerX" secondItem="0Hm-a6-Tjv" secondAttribute="centerX" id="owh-0p-jgw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="BtnBack" destination="gTF-jL-WZ2" id="sla-EG-fdY"/>
+                        <outlet property="BtnTasks" destination="Jn8-a7-R81" id="oo2-A8-17U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U99-f9-RrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713" y="41"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="wxD-Nx-OB8">
+            <objects>
+                <viewController storyboardIdentifier="TasksVC" id="xR7-tm-b6W" customClass="TasksVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="72m-I9-0dh"/>
+                        <viewControllerLayoutGuide type="bottom" id="w2N-rk-kzu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XgN-nd-GCE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gBi-d0-Q9B">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gBi-d0-Q9B" firstAttribute="leading" secondItem="XgN-nd-GCE" secondAttribute="leading" id="bqk-eb-kPa"/>
+                            <constraint firstItem="w2N-rk-kzu" firstAttribute="top" secondItem="gBi-d0-Q9B" secondAttribute="bottom" id="i5j-tV-KPh"/>
+                            <constraint firstItem="gBi-d0-Q9B" firstAttribute="top" secondItem="72m-I9-0dh" secondAttribute="bottom" id="tTK-eW-gBm"/>
+                            <constraint firstAttribute="trailing" secondItem="gBi-d0-Q9B" secondAttribute="trailing" id="zZj-9S-nXC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tasks" id="ra0-L7-KUB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="TableTasks" destination="gBi-d0-Q9B" id="5GZ-7E-rS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcZ-8j-TKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="40.929535232383813"/>
         </scene>
     </scenes>
 </document>

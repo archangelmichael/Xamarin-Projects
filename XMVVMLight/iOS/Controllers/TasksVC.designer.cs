@@ -9,25 +9,17 @@ using System.CodeDom.Compiler;
 
 namespace XMVVMLight.iOS
 {
-	[Register ("SecondVC")]
-	partial class SecondVC
+	[Register ("TasksVC")]
+	partial class TasksVC
 	{
 		[Outlet]
-		UIKit.UIButton BtnBack { get; set; }
-
-		[Outlet]
-		UIKit.UIButton BtnTasks { get; set; }
+		UIKit.UITableView TableTasks { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (BtnBack != null) {
-				BtnBack.Dispose ();
-				BtnBack = null;
-			}
-
-			if (BtnTasks != null) {
-				BtnTasks.Dispose ();
-				BtnTasks = null;
+			if (TableTasks != null) {
+				TableTasks.Dispose ();
+				TableTasks = null;
 			}
 		}
 	}
