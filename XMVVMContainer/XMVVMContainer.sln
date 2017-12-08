@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "XMVVMContainer", "XMVVMContainer\XMVVMContainer.shproj", "{45919523-CBC8-4072-BAD9-2F65C59E5D68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMVVMContainer.iOS", "iOS\XMVVMContainer.iOS.csproj", "{7486A64C-190F-45B0-8E08-C24BF053943F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Release|iPhone.ActiveCfg = Release|iPhone
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Release|iPhone.Build.0 = Release|iPhone
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{7486A64C-190F-45B0-8E08-C24BF053943F}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
