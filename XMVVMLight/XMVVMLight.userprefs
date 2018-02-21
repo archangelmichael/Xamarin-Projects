@@ -1,12 +1,22 @@
 ﻿<Properties StartupConfiguration="{93E36F81-1D81-49CB-9927-51A60A1B2CF2}|Default">
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
+    <Files>
+      <File FileName="XMVVMLight/ViewModel/ViewModelLocator.cs" Line="1" Column="1" />
+      <File FileName="XMVVMLight/ViewModel/MainViewModel.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/FirstVC.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/SecondVC.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/TasksVC.cs" Line="1" Column="1" />
+      <File FileName="XMVVMLight/Model/TaskModel.cs" Line="1" Column="1" />
+      <File FileName="iOS/Info.plist" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.XMVVMLight.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d93ef6daa7225b5b6e0a440c5c45a030259814b4">
+  <MonoDevelop.Ide.ItemProperties.XMVVMLight.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.1D58059F-F3D8-47AF-A6AC-9AA5084FEACA" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.XMVVMLight.iOS>
 </Properties>
